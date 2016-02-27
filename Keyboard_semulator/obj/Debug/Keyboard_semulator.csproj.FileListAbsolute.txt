@@ -1,1 +1,10 @@
 D:\Cloud-Mail.ru\Dropbox\MyProgram\C#\Desktop\Keyboard_semulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe.config
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe.config
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.pdb
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csprojResolveAssemblyReference.cache
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Form1.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Properties.Resources.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csproj.GenerateResource.Cache
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.exe
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.pdb

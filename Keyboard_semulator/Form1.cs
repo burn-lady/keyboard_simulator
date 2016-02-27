@@ -28,7 +28,12 @@ namespace Keyboard_semulator
         private void button1_Click(object sender, EventArgs e)
         {
             string path = Application.StartupPath;
-           // label1.Text = 
+            List<string> lines = MyTextReader.read(Application.StartupPath, MyTextReader.FILE_NAME);
+            foreach (string line in lines)
+            {
+                listBoxTextFile.Items.Add(line);
+            }
+            
         }
     }
 }

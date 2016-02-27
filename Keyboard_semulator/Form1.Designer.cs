@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.listBoxTextFile = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(116, 89);
+            this.linkLabel1.Location = new System.Drawing.Point(140, 33);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(72, 17);
             this.linkLabel1.TabIndex = 2;
@@ -72,11 +73,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // listBoxTextFile
+            // 
+            this.listBoxTextFile.FormattingEnabled = true;
+            this.listBoxTextFile.ItemHeight = 16;
+            this.listBoxTextFile.Location = new System.Drawing.Point(31, 69);
+            this.listBoxTextFile.Name = "listBoxTextFile";
+            this.listBoxTextFile.Size = new System.Drawing.Size(636, 276);
+            this.listBoxTextFile.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 423);
+            this.Controls.Add(this.listBoxTextFile);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
@@ -94,6 +105,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBoxTextFile;
     }
 }
 

@@ -9,18 +9,25 @@ namespace Keyboard_semulator
 {
      
 
-    class TextReader
+    class MyTextReader
     {
-        public static string FILE_NAME = "text_file.txt";
+        public static string FILE_NAME = "testfile.txt";
 
-        public TextReader()
+        public MyTextReader()
         {
 
         }
-        public List<string> read(string appPatch, string fileName)
+        public static List<string> read(string appPatch, string fileName)
         {
             List<string> listText = new List<string>();
             listText.AddRange(File.ReadAllLines(appPatch + "//" + fileName));
+            return listText;
+        }
+
+        public static List<string> read (string path)
+        {
+            List<string> listText = new List<string>();
+            listText.AddRange(File.ReadAllLines(path));
             return listText;
         }
 
