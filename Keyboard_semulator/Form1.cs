@@ -14,18 +14,37 @@ namespace Keyboard_semulator
 {
     public partial class Form1 : Form
     {
+        int hitClicks;
+        int totalClicks;
+        int timeSimulation;
+        int step;
+        int maxWords;
+
+        string task;
+        int timeLimiter;
+        bool run;
+
+
+        private void createVariables ()
+        {
+            hitClicks = 0;
+            totalClicks = 0;
+            timeSimulation = 0;
+            step = 0;
+            maxWords = 0;
+        }
+
         public Form1()
         {
             InitializeComponent();
+            createVariables();
+            run = false;
         }
 
-        private int errors;
-        private int time;
-        
-        
-        
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void startButtonClick(object sender, EventArgs e)
         {
             string path = Application.StartupPath;
             List<string> lines = MyTextReader.read(Application.StartupPath, MyTextReader.FILE_NAME);
@@ -33,7 +52,36 @@ namespace Keyboard_semulator
             {
                 listBoxTextFile.Items.Add(line);
             }
-            
+            task = Controller.generateTask(lines);
+            taskLabel.Text = Controller.visibleLine(task, 0); //step = 0
+              
+        }
+
+        private void hitClickEvent()
+        {
+            step++;
+            hitClicks++;
+            totalClicks++;
+            taskLabel.Text = Controller.visibleLine(task, step);
+            updateInterface();
+        }
+
+        private void errorCLickEvent()
+        {
+            totalClicks++;
+            updateInterface();
+        }
+
+        private void updateInterface()
+        {
+            totalClickLabel.Text = "Всего: "  + totalClicks + "  Попаданий: " + hitClicks  ;
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (task[step] == e.KeyChar) hitClickEvent();
+            else errorCLickEvent();
+        
         }
     }
 }

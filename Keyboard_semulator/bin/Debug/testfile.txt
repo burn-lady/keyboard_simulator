@@ -1,4 +1,6 @@
-Juju
-jaja
-хахах
-здесь находится ваный текст
+home
+work
+fast
+love
+angry
+java
