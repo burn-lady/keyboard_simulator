@@ -1,6 +1,0 @@
-home
-work
-fast
-love
-angry
-java

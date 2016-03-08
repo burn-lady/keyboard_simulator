@@ -8,3 +8,15 @@ D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Pr
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csproj.GenerateResource.Cache
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.exe
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.pdb
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe.config
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.exe
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.pdb
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.pdb
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Form1.resources
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.MainForm.resources
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Properties.Resources.resources
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csproj.GenerateResource.Cache
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.StatisticForm.resources
+C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csprojResolveAssemblyReference.cache

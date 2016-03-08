@@ -11,23 +11,20 @@ namespace Keyboard_semulator
 
     class MyTextReader
     {
-        public static string FILE_NAME = "testfile.txt";
+        public static string WORDS = "words_text_file.txt";
+        public static string CONTROL_TEXT = "control_text.txt";
 
-        public MyTextReader()
-        {
-
-        }
         public static List<string> read(string appPatch, string fileName)
         {
             List<string> listText = new List<string>();
-            listText.AddRange(File.ReadAllLines(appPatch + "//" + fileName));
+            listText.AddRange(File.ReadAllLines(appPatch + "//" + fileName, Encoding.Default));
             return listText;
         }
 
         public static List<string> read (string path)
         {
             List<string> listText = new List<string>();
-            listText.AddRange(File.ReadAllLines(path));
+            listText.AddRange(File.ReadAllLines(path, Encoding.Default));
             return listText;
         }
 
