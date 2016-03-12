@@ -35,7 +35,7 @@ namespace Keyboard_semulator.Forms
             try {
                 listUser.Add(new User(userNameTextBox.Text));
                if(! Serializer.writeObject(Serializer.FILE_USERS, listUser)) MessageBox.Show("Не удалось записать фаил");
-                usersListBox.Items.Add(userNameTextBox.Text);
+               else usersListBox.Items.Add(userNameTextBox.Text);
             } catch (System.NullReferenceException)
             {
                 MessageBox.Show("NullReferenseException");

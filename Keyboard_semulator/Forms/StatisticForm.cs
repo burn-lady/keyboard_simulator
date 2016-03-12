@@ -105,7 +105,13 @@ namespace Keyboard_semulator.Forms
 
             foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
             {
-                points.Add(new Point(x, graphicBox.Height - CELL_DIVISION - timeBlock.countClicks));
+                points.Add(new Point(x, graphicBox.Height - CELL_DIVISION - timeBlock.countClicks 
+                    * (CELL_DIVISION/ STEP_X)));
+                x += CELL_DIVISION;
+            }
+            for (int i = 1; i < points.Count; i++)
+            {
+                g.DrawLine(new Pen(Color.Red, 2), points[i - 1], points[i]);
             }
 
         }

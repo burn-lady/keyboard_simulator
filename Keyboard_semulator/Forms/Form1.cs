@@ -145,7 +145,7 @@ namespace Keyboard_semulator
 
         private void finishSession()
         {
-            run = false;
+             run = false;
             simulationTimer.Enabled = false;
             textBox1.Clear();
             saveResult();

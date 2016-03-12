@@ -14,20 +14,23 @@ namespace Keyboard_semulator
 
         public static bool writeObject(string path, object obj)
         {
+            FileStream FS = new FileStream(path, FileMode.Create);
             try {
-                FileStream FS = new FileStream(path, FileMode.Create);
+              
                 new BinaryFormatter().Serialize(FS, obj);
                 FS.Close();
                 return true;
             }
-            catch 
+            catch (NullReferenceException)
             {
                 return false;
+                FS.Close();
             }
         }
 
         public static object readObject(string path)
         {
+ 
             try
             {
                 FileStream FS = new FileStream(path, FileMode.Open);
@@ -35,7 +38,8 @@ namespace Keyboard_semulator
                 FS.Close();
                 return obj;
             }
-            catch { return null; }
+            catch( FormatException)  { return null;   }
+            catch (FileNotFoundException) { return null;  }
         }
     }
 }
