@@ -22,6 +22,7 @@ namespace Keyboard_semulator.Data
         public int totalWords;
 
         public Dictionary<char, int> errorLetters;
+        public List<TimeBlockCliks> listTimeBlockClicks;
 
 
         public Session(string typeSession, int totalClicks, int errorClicks, int sessionTime, int maxWords)
@@ -31,15 +32,18 @@ namespace Keyboard_semulator.Data
             this.totalClicks = totalClicks; this.errorClicks = errorClicks;
             this.sessionTime = sessionTime; this.maxWords = maxWords;
             errorLetters = new Dictionary<char, int>();
+            listTimeBlockClicks = new List<TimeBlockCliks>();
         }
 
-        public Session(string typeSession, int totalClicks, int errorClicks, int sessionTime, int maxWords, Dictionary<char, int> errorLetters)
+        public Session(string typeSession, int totalClicks, int errorClicks, int sessionTime,
+            int maxWords, Dictionary<char, int> errorLetters, List<TimeBlockCliks> listTimeBlockClicks)
         {
             dateTime = DateTime.Now;
             this.typeSession = typeSession;
             this.totalClicks = totalClicks; this.errorClicks = errorClicks;
             this.sessionTime = sessionTime; this.maxWords = maxWords;
             this.errorLetters = errorLetters;
+            this.listTimeBlockClicks = listTimeBlockClicks;
         }
 
       /*  public void addErrorLetter(char letter)

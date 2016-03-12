@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Constanta.cs" />
+    <Compile Include="Data\TimeBlockCliks.cs" />
     <Compile Include="Forms\StatisticForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -110,6 +110,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StatisticForm";
             this.Text = ".";
+            this.Load += new System.EventHandler(this.StatisticForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.graphicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

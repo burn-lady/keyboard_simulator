@@ -13,8 +13,11 @@ namespace Keyboard_semulator.Forms
 {
     public partial class StatisticForm : Form
     {
-        private static int CELL_DIVISION = 20;//деления
-       List<User> listUsers;
+        private static int CELL_DIVISION = 30;  //деления
+        private static int STEP_X = 5;
+        private static int STEP_Y = 5;
+
+        List<User> listUsers;
         User selectedUser = null;
         Graphics g;
 
@@ -31,9 +34,14 @@ namespace Keyboard_semulator.Forms
             InitializeComponent();
             loadUsers();
             initInterface();
-            drawGraphic();
+       
             g = graphicBox.CreateGraphics();
           
+        }
+
+        private void StatisticForm_Load(object sender, EventArgs e)
+        {
+           // drawGraphic();
         }
 
         private void loadUsers()
@@ -47,10 +55,9 @@ namespace Keyboard_semulator.Forms
             dateListBox.Items.Clear();
             if (selectedUser != null)
                 foreach (Session session in selectedUser.listSessions)
-                    if (sessionTypeComboBox.Text == session.typeSession)
-                    {
+                    if (sessionTypeComboBox.Text == session.typeSession)                    
                         dateListBox.Items.Add(session.dateTime.ToString());                    
-                    }
+                    
         }
 
         private double getY(int  T_selectSessionTime, int A_first, int t_allTime)
@@ -76,11 +83,11 @@ namespace Keyboard_semulator.Forms
             //подпись клеток
                 for (int i = CELL_DIVISION; i < graphicBox.Width; i += CELL_DIVISION)//
                 {                
-                    g.DrawString(i.ToString(), font, 
+                    g.DrawString(((i/CELL_DIVISION)*STEP_Y).ToString(), font, 
                         Brushes.Black, new PointF(0, graphicBox.Height - i - CELL_DIVISION));// вертикаль
                 }
                 for (int i = 0; i < graphicBox.Width; i += CELL_DIVISION)
-                    g.DrawString(((i+ CELL_DIVISION) / CELL_DIVISION).ToString(),
+                    g.DrawString(((i+ CELL_DIVISION)*STEP_X / CELL_DIVISION).ToString(),
                         font, Brushes.Black, new PointF(i + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт
 
             } catch(System.NullReferenceException)
@@ -90,9 +97,23 @@ namespace Keyboard_semulator.Forms
             
         }
 
+        private void drawGraphic(Session selectedSession)
+        {
+            drawSnood();
+            int x = CELL_DIVISION;
+            List<Point> points = new List<Point>();
+
+            foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
+            {
+                points.Add(new Point(x, graphicBox.Height - CELL_DIVISION - timeBlock.countClicks));
+            }
+
+        }
+
         private void drawGraphic()
         {
             drawSnood();
+
 
             int x = CELL_DIVISION;
             List<Point> points = new List<Point>();
@@ -111,7 +132,7 @@ namespace Keyboard_semulator.Forms
         {
             selectedUser = User.searchUser(listUsers, userComboBox.Text);
             uploadUserDateInfo();
-            drawGraphic();
+           // drawGraphic();
 
         }
 
@@ -120,8 +141,11 @@ namespace Keyboard_semulator.Forms
         private void dateListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             
+
            string dateString = dateListBox.GetItemText(dateListBox.SelectedItem);
             Session selectedSession = Session.searchSession(selectedUser, dateString);
+
+            drawGraphic(selectedSession);
 
             InfoListBox.Items.Clear();
             addInfo(dateString);
@@ -146,5 +170,7 @@ namespace Keyboard_semulator.Forms
         {
 
         }
+
+    
     }
 }

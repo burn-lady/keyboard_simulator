@@ -18,6 +18,7 @@ namespace Keyboard_semulator.Data
             this.name = name;
             listSessions = new List<Session>();
             A_first = 0;
+
         }
 
         public static User searchUser (List<User> listUsers, string name)

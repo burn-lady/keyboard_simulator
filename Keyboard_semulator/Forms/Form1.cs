@@ -15,9 +15,15 @@ namespace Keyboard_semulator
 {
     public partial class Form1 : Form
     {
+     
+
+        int sessionTime;
+        int sessionTimeBlock;
+
+
         int errorClicks;
         int totalClicks;
-        int sessionTime;
+
         int step;
         int maxWords;
         
@@ -29,14 +35,19 @@ namespace Keyboard_semulator
 
         string userName;
         string sessionType;
+
         public Dictionary<char, int> errorLetters;
+        List<TimeBlockCliks> listTimeBlocksCLiks;
 
         private void createVariables ()
         {
             errorLetters = new Dictionary<char, int>();
+            listTimeBlocksCLiks = new List<TimeBlockCliks>();
+
             errorClicks = 0;
             totalClicks = 0;
             sessionTime = 0;
+            sessionTimeBlock = 0;
             step = 0;           
 
             maxWords = 7;
@@ -148,7 +159,7 @@ namespace Keyboard_semulator
             listUsers.Remove(user);
             if (user.A_first == 0) user.A_first = sessionTime; 
             user.listSessions.Add(new Session
-                (sessionType ,totalClicks, errorClicks, sessionTime, maxWords, errorLetters));
+                (sessionType ,totalClicks, errorClicks, sessionTime, maxWords, errorLetters, listTimeBlocksCLiks));
             listUsers.Add(user);
             Serializer.writeObject(Serializer.FILE_USERS, listUsers);
         }
@@ -171,10 +182,20 @@ namespace Keyboard_semulator
            
         }
 
+        private void fixBlock()
+        {
+            sessionTimeBlock = 0;
+            listTimeBlocksCLiks.Add(new TimeBlockCliks(sessionTime, totalClicks));
+            
+        }
+
         private void simulationTimer_Tick(object sender, EventArgs e)
         {
             sessionTime++;
-            timeLabel.Text = "Время: " + sessionTime ; 
+            sessionTimeBlock++;
+            timeLabel.Text = "Время: " + sessionTime ;
+
+            if (sessionTimeBlock == Constanta.TIME_BLOCK_SECOND) fixBlock();
             //if (timeLimiter == sessionTime) finishSession();                   
         }
     }
