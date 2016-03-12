@@ -32,3 +32,6 @@ D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semul
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Properties.Resources.resources
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csproj.GenerateResource.Cache
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.MainForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.StatisticForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources

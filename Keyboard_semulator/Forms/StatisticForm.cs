@@ -15,7 +15,7 @@ namespace Keyboard_semulator.Forms
     {
         private static int CELL_DIVISION = 30;  //деления
         private static int STEP_X = 5;
-        private static int STEP_Y = 5;
+        private static int STEP_Y = 20;
 
         List<User> listUsers;
         User selectedUser = null;
@@ -105,8 +105,8 @@ namespace Keyboard_semulator.Forms
 
             foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
             {
-                points.Add(new Point(x, graphicBox.Height - CELL_DIVISION - timeBlock.countClicks 
-                    * (CELL_DIVISION/ STEP_X)));
+                points.Add(new Point(x,
+                    graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION/ STEP_X)));
                 x += CELL_DIVISION;
             }
             for (int i = 1; i < points.Count; i++)

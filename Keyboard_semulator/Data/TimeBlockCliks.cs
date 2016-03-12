@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Keyboard_semulator.Data
 {
+    [Serializable()]
     public class TimeBlockCliks
     {
         public int secondStartSession; // По идее, самое первое значение будет равно 5, а не 0

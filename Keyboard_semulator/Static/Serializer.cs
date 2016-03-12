@@ -40,6 +40,7 @@ namespace Keyboard_semulator
             }
             catch( FormatException)  { return null;   }
             catch (FileNotFoundException) { return null;  }
+            catch { return null; }
         }
     }
 }
