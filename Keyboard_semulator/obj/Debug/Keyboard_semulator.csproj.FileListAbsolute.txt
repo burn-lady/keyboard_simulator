@@ -20,3 +20,15 @@ C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Ke
 C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources
 C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.StatisticForm.resources
 C:\Users\Родион\Desktop\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csprojResolveAssemblyReference.cache
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe.config
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.exe
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.pdb
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csprojResolveAssemblyReference.cache
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.pdb
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Form1.resources
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.MainForm.resources
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.StatisticForm.resources
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Properties.Resources.resources
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.csproj.GenerateResource.Cache

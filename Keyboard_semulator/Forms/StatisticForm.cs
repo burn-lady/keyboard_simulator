@@ -13,7 +13,8 @@ namespace Keyboard_semulator.Forms
 {
     public partial class StatisticForm : Form
     {
-        List<User> listUsers;
+        private static int CELL_DIVISION = 20;//деления
+       List<User> listUsers;
         User selectedUser = null;
         Graphics g;
 
@@ -30,6 +31,7 @@ namespace Keyboard_semulator.Forms
             InitializeComponent();
             loadUsers();
             initInterface();
+            drawGraphic();
             g = graphicBox.CreateGraphics();
           
         }
@@ -59,15 +61,29 @@ namespace Keyboard_semulator.Forms
         // Нарисовать клеточки
         private void drawSnood()
         { try
-            { 
+            {
             g.Clear(Color.White);
             Pen pen = new Pen(Color.Gray, 1);
-            for (int bloc = 0; bloc < graphicBox.Size.Width; bloc += 10)
-            {
-                g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height);
-                g.DrawLine(pen, 0, bloc, graphicBox.Size.Width, bloc);
-            }
-          } catch(System.NullReferenceException)
+
+            Font font = new Font(FontFamily.GenericSerif, 10)   ;
+
+            for (int bloc = CELL_DIVISION; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
+                g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
+
+            for (int bloc = graphicBox.Height - CELL_DIVISION; bloc > 0; bloc -= CELL_DIVISION )
+                    g.DrawLine(pen, CELL_DIVISION, graphicBox.Height - bloc, graphicBox.Size.Width, graphicBox.Height - bloc); // Горизонтальные линии
+      
+            //подпись клеток
+                for (int i = CELL_DIVISION; i < graphicBox.Width; i += CELL_DIVISION)//
+                {                
+                    g.DrawString(i.ToString(), font, 
+                        Brushes.Black, new PointF(0, graphicBox.Height - i - CELL_DIVISION));// вертикаль
+                }
+                for (int i = 0; i < graphicBox.Width; i += CELL_DIVISION)
+                    g.DrawString(((i+ CELL_DIVISION) / CELL_DIVISION).ToString(),
+                        font, Brushes.Black, new PointF(i + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт
+
+            } catch(System.NullReferenceException)
             {
                 g = graphicBox.CreateGraphics();
             }
@@ -78,20 +94,12 @@ namespace Keyboard_semulator.Forms
         {
             drawSnood();
 
-            int x = 10;
+            int x = CELL_DIVISION;
             List<Point> points = new List<Point>();
-           // int t_AllTime = selectedUser.get_t_AllTime();
             foreach (Session session in selectedUser.listSessions)
-            {
-               // if (sessionTypeComboBox.Text == session.typeSession)
-                {
-                  //  MessageBox.Show("double y =  " + getY(session.sessionTime, selectedUser.A_first, t_AllTime));
-                  //  int y = (int)getY(session.sessionTime, selectedUser.A_first, t_AllTime);
-                    
-                 //   points.Add(new Point(x, graphicBox.Size.Height - y * 100));
-                    points.Add(new Point(x, graphicBox.Size.Height - session.sessionTime * 1));
-                    x += 10; 
-                }
+            {                                              
+                    points.Add(new Point(x, graphicBox.Size.Height - CELL_DIVISION - session.sessionTime * 1));
+                    x +=  CELL_DIVISION;                 
             }
             for (int i=1; i<points.Count; i++)
             {
@@ -132,6 +140,11 @@ namespace Keyboard_semulator.Forms
         {
             uploadUserDateInfo();
             drawGraphic();
+        }
+
+        private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
