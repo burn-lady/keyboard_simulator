@@ -33,17 +33,16 @@
             this.InfoListBox = new System.Windows.Forms.ListBox();
             this.graphicBox = new System.Windows.Forms.PictureBox();
             this.sessionTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.graphicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // userComboBox
             // 
             this.userComboBox.FormattingEnabled = true;
-            this.userComboBox.Location = new System.Drawing.Point(9, 10);
-            this.userComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userComboBox.Location = new System.Drawing.Point(12, 12);
+            this.userComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userComboBox.Name = "userComboBox";
-            this.userComboBox.Size = new System.Drawing.Size(684, 21);
+            this.userComboBox.Size = new System.Drawing.Size(861, 24);
             this.userComboBox.TabIndex = 0;
             this.userComboBox.SelectedIndexChanged += new System.EventHandler(this.userComboBox_SelectedIndexChanged);
             this.userComboBox.SelectedValueChanged += new System.EventHandler(this.userComboBox_SelectedValueChanged);
@@ -51,69 +50,59 @@
             // dateListBox
             // 
             this.dateListBox.FormattingEnabled = true;
-            this.dateListBox.Location = new System.Drawing.Point(9, 69);
-            this.dateListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateListBox.ItemHeight = 16;
+            this.dateListBox.Location = new System.Drawing.Point(12, 85);
+            this.dateListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateListBox.Name = "dateListBox";
-            this.dateListBox.Size = new System.Drawing.Size(166, 381);
+            this.dateListBox.Size = new System.Drawing.Size(220, 292);
             this.dateListBox.TabIndex = 1;
             this.dateListBox.SelectedValueChanged += new System.EventHandler(this.dateListBox_SelectedValueChanged);
             // 
             // InfoListBox
             // 
             this.InfoListBox.FormattingEnabled = true;
-            this.InfoListBox.Location = new System.Drawing.Point(182, 71);
-            this.InfoListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InfoListBox.ItemHeight = 16;
+            this.InfoListBox.Location = new System.Drawing.Point(12, 390);
+            this.InfoListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InfoListBox.Name = "InfoListBox";
-            this.InfoListBox.Size = new System.Drawing.Size(512, 95);
+            this.InfoListBox.Size = new System.Drawing.Size(220, 164);
             this.InfoListBox.TabIndex = 2;
             // 
             // graphicBox
             // 
-            this.graphicBox.Location = new System.Drawing.Point(206, 172);
-            this.graphicBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.graphicBox.Location = new System.Drawing.Point(243, 85);
+            this.graphicBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.graphicBox.Name = "graphicBox";
-            this.graphicBox.Size = new System.Drawing.Size(487, 280);
+            this.graphicBox.Size = new System.Drawing.Size(630, 480);
             this.graphicBox.TabIndex = 3;
             this.graphicBox.TabStop = false;
             // 
             // sessionTypeComboBox
             // 
             this.sessionTypeComboBox.FormattingEnabled = true;
-            this.sessionTypeComboBox.Location = new System.Drawing.Point(9, 34);
-            this.sessionTypeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sessionTypeComboBox.Location = new System.Drawing.Point(12, 42);
+            this.sessionTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sessionTypeComboBox.Name = "sessionTypeComboBox";
-            this.sessionTypeComboBox.Size = new System.Drawing.Size(684, 21);
+            this.sessionTypeComboBox.Size = new System.Drawing.Size(861, 24);
             this.sessionTypeComboBox.TabIndex = 4;
             this.sessionTypeComboBox.SelectedValueChanged += new System.EventHandler(this.sessionTypeComboBox_SelectedValueChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 184);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "errors";
-            // 
             // StatisticForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 471);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(898, 580);
             this.Controls.Add(this.sessionTypeComboBox);
             this.Controls.Add(this.graphicBox);
             this.Controls.Add(this.InfoListBox);
             this.Controls.Add(this.dateListBox);
             this.Controls.Add(this.userComboBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StatisticForm";
             this.Text = ".";
             this.Load += new System.EventHandler(this.StatisticForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.graphicBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -124,6 +113,5 @@
         private System.Windows.Forms.ListBox InfoListBox;
         private System.Windows.Forms.PictureBox graphicBox;
         private System.Windows.Forms.ComboBox sessionTypeComboBox;
-        private System.Windows.Forms.Label label1;
     }
 }
