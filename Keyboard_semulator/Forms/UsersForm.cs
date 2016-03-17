@@ -47,5 +47,15 @@ namespace Keyboard_semulator.Forms
             if (Serializer.writeObject(Serializer.FILE_USERS, new List<User>())) MessageBox.Show("Очищено и создано заново!");
             loadUsers();
         }
+
+        private void userNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usersListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

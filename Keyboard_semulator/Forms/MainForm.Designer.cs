@@ -40,77 +40,107 @@
             // 
             // newGameButton
             // 
-            this.newGameButton.Location = new System.Drawing.Point(5, 15);
+            this.newGameButton.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.newGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newGameButton.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newGameButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.newGameButton.Location = new System.Drawing.Point(4, 3);
+            this.newGameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.newGameButton.Name = "newGameButton";
-            this.newGameButton.Size = new System.Drawing.Size(361, 40);
+            this.newGameButton.Size = new System.Drawing.Size(271, 43);
             this.newGameButton.TabIndex = 0;
             this.newGameButton.Text = "Выбрать пользователя";
-            this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.UseVisualStyleBackColor = false;
             this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(5, 271);
+            this.settingsButton.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.settingsButton.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsButton.Location = new System.Drawing.Point(660, 411);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(361, 40);
+            this.settingsButton.Size = new System.Drawing.Size(177, 45);
             this.settingsButton.TabIndex = 1;
             this.settingsButton.Text = "Настройки";
-            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.UseVisualStyleBackColor = false;
             // 
             // statisticsButton
             // 
-            this.statisticsButton.Location = new System.Drawing.Point(5, 317);
+            this.statisticsButton.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.statisticsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.statisticsButton.Font = new System.Drawing.Font("Ravie", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statisticsButton.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.statisticsButton.Location = new System.Drawing.Point(74, 300);
+            this.statisticsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.statisticsButton.Name = "statisticsButton";
-            this.statisticsButton.Size = new System.Drawing.Size(361, 40);
+            this.statisticsButton.Size = new System.Drawing.Size(271, 136);
             this.statisticsButton.TabIndex = 2;
             this.statisticsButton.Text = "Статистика";
-            this.statisticsButton.UseVisualStyleBackColor = true;
+            this.statisticsButton.UseVisualStyleBackColor = false;
             this.statisticsButton.Click += new System.EventHandler(this.statisticsButton_Click);
             // 
             // UsersBox
             // 
+            this.UsersBox.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.UsersBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UsersBox.Font = new System.Drawing.Font("Snap ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsersBox.ForeColor = System.Drawing.Color.MediumAquamarine;
             this.UsersBox.FormattingEnabled = true;
-            this.UsersBox.Location = new System.Drawing.Point(5, 61);
+            this.UsersBox.Location = new System.Drawing.Point(4, 50);
+            this.UsersBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UsersBox.Name = "UsersBox";
-            this.UsersBox.Size = new System.Drawing.Size(361, 24);
+            this.UsersBox.Size = new System.Drawing.Size(272, 23);
             this.UsersBox.Sorted = true;
             this.UsersBox.TabIndex = 3;
             this.UsersBox.Click += new System.EventHandler(this.UsersBox_Click);
             // 
             // usersButton
             // 
-            this.usersButton.Location = new System.Drawing.Point(5, 225);
+            this.usersButton.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.usersButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.usersButton.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersButton.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.usersButton.Location = new System.Drawing.Point(74, 111);
+            this.usersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usersButton.Name = "usersButton";
-            this.usersButton.Size = new System.Drawing.Size(361, 40);
+            this.usersButton.Size = new System.Drawing.Size(271, 129);
             this.usersButton.TabIndex = 4;
             this.usersButton.Text = "Пользователи";
-            this.usersButton.UseVisualStyleBackColor = true;
+            this.usersButton.UseVisualStyleBackColor = false;
             this.usersButton.Click += new System.EventHandler(this.usersButton_Click);
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(377, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(417, 37);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(355, 337);
+            this.pictureBox2.Size = new System.Drawing.Size(354, 353);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 363);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(848, 467);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.usersButton);
             this.Controls.Add(this.UsersBox);
             this.Controls.Add(this.statisticsButton);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.newGameButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Адаптивный клавиатурный тренажер";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

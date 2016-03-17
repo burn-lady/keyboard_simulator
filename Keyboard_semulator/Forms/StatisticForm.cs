@@ -15,7 +15,7 @@ namespace Keyboard_semulator.Forms
     {
         private static int CELL_DIVISION = 30;  //деления
         private static int STEP_X = 5;
-        private static int STEP_Y = 20;
+        private static int STEP_Y = 40;
 
         List<User> listUsers;
         User selectedUser = null;
@@ -177,6 +177,9 @@ namespace Keyboard_semulator.Forms
 
         }
 
-    
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

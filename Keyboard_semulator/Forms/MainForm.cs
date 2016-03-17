@@ -53,5 +53,10 @@ namespace Keyboard_semulator
         {
             loadUsers();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

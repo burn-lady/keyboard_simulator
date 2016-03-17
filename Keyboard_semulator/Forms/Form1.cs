@@ -198,5 +198,25 @@ namespace Keyboard_semulator
             if (sessionTimeBlock == Constanta.TIME_BLOCK_SECOND) fixBlock();
             //if (timeLimiter == sessionTime) finishSession();                   
         }
+
+        private void totalClickLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void wordsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taskLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
