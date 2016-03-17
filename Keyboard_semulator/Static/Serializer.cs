@@ -23,8 +23,8 @@ namespace Keyboard_semulator
             }
             catch (NullReferenceException)
             {
-                return false;
                 FS.Close();
+                return false;
             }
         }
 

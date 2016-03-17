@@ -13,9 +13,10 @@ namespace Keyboard_semulator.Forms
 {
     public partial class StatisticForm : Form
     {
-        private static int CELL_DIVISION = 30;  //деления
-        private static int STEP_X = 5;
-        private static int STEP_Y = 40;
+        //деления,  для корректной отрисовки размеры GraphicsBox должны быть кратны этому числу
+        private static int CELL_DIVISION = 30; 
+        private static int STEP_X = 30;
+        private static int STEP_Y = 30;
 
         List<User> listUsers;
         User selectedUser = null;
@@ -65,30 +66,34 @@ namespace Keyboard_semulator.Forms
             return Math.Log(T_selectSessionTime / A_first) / t_allTime;
         }
 
-        // Нарисовать клеточки
-        private void drawSnood()
-        { try
+        private void updateGraphicsBox()
             {
+            try { 
+
             g.Clear(Color.White);
-            Pen pen = new Pen(Color.Gray, 1);
+            drawSnoodAndCaption();
+            drawGraphic();
+            }
+            catch (System.NullReferenceException)
+            {
+                g = graphicBox.CreateGraphics();
+            }
+        }
 
-            Font font = new Font(FontFamily.GenericSerif, 10)   ;
+        private void updateGraphicsBox(Session selectedSession)
+        {
+            g.Clear(Color.White);
+            drawSnoodAndCaption();
+            drawGraphic(selectedSession);
+        }
 
-            for (int bloc = CELL_DIVISION; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
-                g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
-
-            for (int bloc = graphicBox.Height - CELL_DIVISION; bloc > 0; bloc -= CELL_DIVISION )
-                    g.DrawLine(pen, CELL_DIVISION, graphicBox.Height - bloc, graphicBox.Size.Width, graphicBox.Height - bloc); // Горизонтальные линии
-      
-            //подпись клеток
-                for (int i = CELL_DIVISION; i < graphicBox.Width; i += CELL_DIVISION)//
-                {                
-                    g.DrawString(((i/CELL_DIVISION)*STEP_Y).ToString(), font, 
-                        Brushes.Black, new PointF(0, graphicBox.Height - i - CELL_DIVISION));// вертикаль
-                }
-                for (int i = 0; i < graphicBox.Width; i += CELL_DIVISION)
-                    g.DrawString(((i+ CELL_DIVISION)*STEP_X / CELL_DIVISION).ToString(),
-                        font, Brushes.Black, new PointF(i + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт
+        // Нарисовать клеточки
+        private void drawSnoodAndCaption()
+        {
+            try
+            {                
+                drawShood();
+                drawCaption();   
 
             } catch(System.NullReferenceException)
             {
@@ -97,30 +102,53 @@ namespace Keyboard_semulator.Forms
             
         }
 
+        private void drawShood()
+        {
+            Pen pen = new Pen(Color.Gray, 1);
+            for (int bloc = CELL_DIVISION; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
+                g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
+
+            for (int bloc = graphicBox.Height; bloc > 0; bloc -= CELL_DIVISION)
+                    g.DrawLine(pen, CELL_DIVISION, graphicBox.Height - bloc, graphicBox.Size.Width, graphicBox.Height - bloc); // Горизонтальные линии
+        }
+      
+        private void drawCaption()
+        {
+            Font font = new Font(FontFamily.GenericSerif, 10);
+                for (int i = CELL_DIVISION; i < graphicBox.Width; i += CELL_DIVISION)//
+                g.DrawString(((i / CELL_DIVISION) * STEP_Y).ToString(), font,
+                        Brushes.Black, new PointF(0, graphicBox.Height - i - CELL_DIVISION));// вертикаль
+
+                for (int i = 0; i < graphicBox.Width; i += CELL_DIVISION)
+                g.DrawString(((i + CELL_DIVISION) * STEP_X / CELL_DIVISION).ToString(),
+                        font, Brushes.Black, new PointF(i + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт
+        }
+
         private void drawGraphic(Session selectedSession)
         {
-            drawSnood();
+            try {
             int x = CELL_DIVISION;
             List<Point> points = new List<Point>();
 
             foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
             {
                 points.Add(new Point(x,
-                    graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION/ STEP_X)));
-                x += CELL_DIVISION;
+                        graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION / STEP_Y)));
+                    x = CELL_DIVISION * timeBlock.secondStartSession / STEP_X + CELL_DIVISION;
             }
             for (int i = 1; i < points.Count; i++)
             {
                 g.DrawLine(new Pen(Color.Red, 2), points[i - 1], points[i]);
+            }
+            } catch (NullReferenceException)
+            {
+                MessageBox.Show("Пользователи загружаются..");
             }
 
         }
 
         private void drawGraphic()
         {
-            drawSnood();
-
-
             int x = CELL_DIVISION;
             List<Point> points = new List<Point>();
             foreach (Session session in selectedUser.listSessions)
@@ -147,11 +175,11 @@ namespace Keyboard_semulator.Forms
         private void dateListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             
-
+            try {
            string dateString = dateListBox.GetItemText(dateListBox.SelectedItem);
             Session selectedSession = Session.searchSession(selectedUser, dateString);
 
-            drawGraphic(selectedSession);
+                updateGraphicsBox(selectedSession);
 
             InfoListBox.Items.Clear();
             addInfo(dateString);
@@ -164,12 +192,16 @@ namespace Keyboard_semulator.Forms
             addInfo("");
             addInfo("Статистика ошибок по буквам");
             InfoListBox.Items.AddRange(selectedSession.getArrayStringErrorLetters());   
+            } catch (NullReferenceException)
+            {
+                MessageBox.Show("Выбирите конкретную сессию");
+            }  
         }
 
         private void sessionTypeComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             uploadUserDateInfo();
-            drawGraphic();
+            updateGraphicsBox();
         }
 
         private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,7 +211,7 @@ namespace Keyboard_semulator.Forms
 
         private void label1_Click(object sender, EventArgs e)
         {
-
-        }
+    
     }
+}
 }

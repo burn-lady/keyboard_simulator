@@ -16,10 +16,8 @@ namespace Keyboard_semulator
     public partial class Form1 : Form
     {
      
-
         int sessionTime;
         int sessionTimeBlock;
-
 
         int errorClicks;
         int totalClicks;
@@ -149,6 +147,7 @@ namespace Keyboard_semulator
             simulationTimer.Enabled = false;
             textBox1.Clear();
             saveResult();
+            fixBlock();
             MessageBox.Show("Вы закончили упражнение! \n" + DateTime.Now.ToString());
         }
 
@@ -194,9 +193,8 @@ namespace Keyboard_semulator
             sessionTime++;
             sessionTimeBlock++;
             timeLabel.Text = "Время: " + sessionTime ;
-
-            if (sessionTimeBlock == Constanta.TIME_BLOCK_SECOND) fixBlock();
-            //if (timeLimiter == sessionTime) finishSession();                   
+            if(Constanta.TIME_BLOCK_SECOND == sessionTimeBlock) fixBlock();
+                           
         }
 
         private void totalClickLabel_Click(object sender, EventArgs e)
