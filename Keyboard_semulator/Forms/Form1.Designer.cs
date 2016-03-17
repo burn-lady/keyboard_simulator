@@ -38,6 +38,7 @@
             this.timeLabel = new System.Windows.Forms.Label();
             this.wordsRadioButton = new System.Windows.Forms.RadioButton();
             this.textRadioButton = new System.Windows.Forms.RadioButton();
+            this.lettersRadioButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // taskLabel
@@ -47,12 +48,13 @@
             this.taskLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.taskLabel.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.taskLabel.Location = new System.Drawing.Point(23, 26);
+            this.taskLabel.Location = new System.Drawing.Point(23, 46);
             this.taskLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.taskLabel.Name = "taskLabel";
-            this.taskLabel.Size = new System.Drawing.Size(92, 27);
+            this.taskLabel.Size = new System.Drawing.Size(748, 27);
             this.taskLabel.TabIndex = 0;
-            this.taskLabel.Text = "Задание";
+            this.taskLabel.Text = "Задание                                                                          " +
+    "        ";
             this.taskLabel.Click += new System.EventHandler(this.taskLabel_Click);
             // 
             // totalClickLabel
@@ -72,11 +74,13 @@
             // 
             this.startButton.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startButton.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.MediumAquamarine;
             this.startButton.Location = new System.Drawing.Point(298, 240);
             this.startButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.startButton.Name = "startButton";
+            this.startButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.startButton.Size = new System.Drawing.Size(217, 88);
             this.startButton.TabIndex = 3;
             this.startButton.Text = "Начать";
@@ -85,10 +89,12 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(38, 191);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(35, 20);
+            this.textBox1.Size = new System.Drawing.Size(35, 13);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -154,12 +160,24 @@
             this.textRadioButton.UseVisualStyleBackColor = true;
             this.textRadioButton.CheckedChanged += new System.EventHandler(this.textRadioButton_CheckedChanged);
             // 
+            // lettersRadioButton
+            // 
+            this.lettersRadioButton.AutoSize = true;
+            this.lettersRadioButton.Location = new System.Drawing.Point(23, 272);
+            this.lettersRadioButton.Name = "lettersRadioButton";
+            this.lettersRadioButton.Size = new System.Drawing.Size(53, 17);
+            this.lettersRadioButton.TabIndex = 10;
+            this.lettersRadioButton.TabStop = true;
+            this.lettersRadioButton.Text = "letters";
+            this.lettersRadioButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(804, 403);
+            this.Controls.Add(this.lettersRadioButton);
             this.Controls.Add(this.textRadioButton);
             this.Controls.Add(this.wordsRadioButton);
             this.Controls.Add(this.timeLabel);
@@ -189,6 +207,7 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.RadioButton wordsRadioButton;
         private System.Windows.Forms.RadioButton textRadioButton;
+        private System.Windows.Forms.RadioButton lettersRadioButton;
     }
 }
 

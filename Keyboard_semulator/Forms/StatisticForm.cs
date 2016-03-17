@@ -26,7 +26,7 @@ namespace Keyboard_semulator.Forms
 
         private void initInterface()
         {
-            sessionTypeComboBox.Items.Add(Session.WORDS_SESSION);
+            sessionTypeComboBox.Items.Add(Session.CONTROL_WORDS_SESSION);
             sessionTypeComboBox.Items.Add(Session.CONTROL_TEXT_SESSION);
             userComboBox.SelectedIndex = 0;
             sessionTypeComboBox.SelectedIndex = 0;
@@ -135,15 +135,14 @@ namespace Keyboard_semulator.Forms
         private void drawCaption()
         {
             Font font = new Font(FontFamily.GenericSerif, 10);
-                for (int i = CELL_DIVISION*MODIFIER_INDENT_FOR_X; i < graphicBox.Width; i += CELL_DIVISION)//
-                g.DrawString(((i / CELL_DIVISION) * STEP_Y).ToString(), font,
-                        Brushes.Black, new PointF(CELL_DIVISION, graphicBox.Height - i - CELL_DIVISION));// вертикаль
+                for (int y = CELL_DIVISION; y < graphicBox.Width; y += CELL_DIVISION)//
+                g.DrawString(((y / CELL_DIVISION) * STEP_Y).ToString(), font,
+                        Brushes.Black, new PointF(CELL_DIVISION, graphicBox.Height - y - CELL_DIVISION));// вертикаль
 
-                for (int i = 0; i < graphicBox.Width; i += CELL_DIVISION)
-                g.DrawString(((i + CELL_DIVISION) * STEP_X / CELL_DIVISION).ToString(),
+                for (int x = 0; x < graphicBox.Width; x += CELL_DIVISION)
+                g.DrawString(((x + CELL_DIVISION) * STEP_X / CELL_DIVISION).ToString(),
                         font, Brushes.Black, 
-                        new PointF(i + CELL_DIVISION*MODIFIER_INDENT_FOR_X, graphicBox.Height - CELL_DIVISION));// горизонт
-            
+                        new PointF(x + CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт            
         }
 
         private void drawGraphic(Session selectedSession)

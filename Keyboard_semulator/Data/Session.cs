@@ -9,8 +9,9 @@ namespace Keyboard_semulator.Data
     [Serializable()]
     public class Session
     {
-        public static string WORDS_SESSION = "Тип сессии: слова";
+        public static string CONTROL_WORDS_SESSION = "Тип сессии: слова";
         public static string CONTROL_TEXT_SESSION = "Тип сессии: контрольный текст";
+        public static string CONTROL_LETTERS_SESSION = "Тип сессии: контрольные буквы";
 
         public DateTime dateTime;
         public string typeSession;

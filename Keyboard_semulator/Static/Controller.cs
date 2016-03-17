@@ -25,6 +25,13 @@ namespace Keyboard_semulator
             return SB.ToString();
         }
 
+        public static string generateTask_Letters(List<string> lines)
+        {
+            StringBuilder SB = new StringBuilder();
+            foreach (string line in lines) SB.Append(line);
+            return SB.ToString();
+        }
+
         public static string generateTask_ControlText(List<string> lines)
         {
             return lines[new Random().Next(0, lines.Count)];
@@ -33,7 +40,7 @@ namespace Keyboard_semulator
         public static string visibleLine(string task, int step)
         {
             StringBuilder SB = new StringBuilder();
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 60; i++)
             {
                 if (step + i < task.Length) SB.Append(task[step + i]);
                 else break;

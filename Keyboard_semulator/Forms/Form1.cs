@@ -82,25 +82,38 @@ namespace Keyboard_semulator
         {
             createVariables();
             simulationTimer.Enabled = true;          
-            List<string> lines = null;
+           
+            rangeOfTask();
+       
 
+            taskLabel.Text = Controller.visibleLine(task, 0); //step = 0
+            textBox1.Focus();
+          
+              
+        }
+
+        private void rangeOfTask()
+        {
+            List<string> lines = null;
             if (wordsRadioButton.Checked)
             {
-                lines = MyTextReader.read(MyTextReader.WORDS);
+                lines = MyTextReader.read(MyTextReader.CONTROL_WORDS);
                 task = Controller.generateTask_Words(lines, maxWords);
-                sessionType = Session.WORDS_SESSION;
+                sessionType = Session.CONTROL_WORDS_SESSION;
             }
             if (textRadioButton.Checked)
             {
                 lines = MyTextReader.read(MyTextReader.CONTROL_TEXT);
                 task = Controller.generateTask_ControlText(lines);
                 sessionType = Session.CONTROL_TEXT_SESSION;
-            }          
+            }
+            if (lettersRadioButton.Checked)
+            {
+                lines = MyTextReader.read(MyTextReader.CONTROL_LETTERS);
+                task = Controller.generateTask_Letters(lines);
+                sessionType = Session.CONTROL_LETTERS_SESSION;  
+            }
 
-            taskLabel.Text = Controller.visibleLine(task, 0); //step = 0
-            textBox1.Focus();
-          
-              
         }
 
         private void hitClickEvent()
