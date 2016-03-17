@@ -94,26 +94,51 @@ namespace Keyboard_semulator
 
         private void rangeOfTask()
         {
-            List<string> lines = null;
-            if (wordsRadioButton.Checked)
-            {
-                lines = MyTextReader.read(MyTextReader.CONTROL_WORDS);
-                task = Controller.generateTask_Words(lines, maxWords);
-                sessionType = Session.CONTROL_WORDS_SESSION;
-            }
-            if (textRadioButton.Checked)
-            {
-                lines = MyTextReader.read(MyTextReader.CONTROL_TEXT);
-                task = Controller.generateTask_ControlText(lines);
-                sessionType = Session.CONTROL_TEXT_SESSION;
-            }
-            if (lettersRadioButton.Checked)
-            {
-                lines = MyTextReader.read(MyTextReader.CONTROL_LETTERS);
-                task = Controller.generateTask_Letters(lines);
-                sessionType = Session.CONTROL_LETTERS_SESSION;  
-            }
+            
+                List<string> lines = null;
 
+                if (wordsRadioButton.Checked)
+                {
+                    lines = MyTextReader.read(MyTextReader.CONTROL_WORDS);
+                     if (lines != null)
+                     {
+                    task = Controller.generateTask_Words(lines, maxWords);
+                    sessionType = Session.CONTROL_WORDS_SESSION;
+                        }
+                        else showFileNotFoundMessage();
+                }
+
+                if (textRadioButton.Checked)
+                {
+                      lines = MyTextReader.read(MyTextReader.CONTROL_TEXT);
+                    if(lines != null)
+                      {
+                    task = Controller.generateTask_ControlText(lines);
+                    sessionType = Session.CONTROL_TEXT_SESSION;
+                      }
+                     else showFileNotFoundMessage();
+                }
+
+                if (lettersRadioButton.Checked)
+                {
+                  lines = MyTextReader.read(MyTextReader.CONTROL_LETTERS);
+                      if (lines != null)
+                     {
+                    task = Controller.generateTask_Letters(lines);
+                    sessionType = Session.CONTROL_LETTERS_SESSION;
+                     }
+                else showFileNotFoundMessage();
+                }
+            
+        }
+
+        
+
+
+        private void showFileNotFoundMessage() {
+            MessageBox.Show("Фаил с заданиями не обнаружен");
+            simulationTimer.Enabled = false;
+            run = false;
         }
 
         private void hitClickEvent()

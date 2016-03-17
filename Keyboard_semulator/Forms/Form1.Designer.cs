@@ -78,7 +78,7 @@
             this.startButton.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.MediumAquamarine;
             this.startButton.Location = new System.Drawing.Point(298, 240);
-            this.startButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startButton.Margin = new System.Windows.Forms.Padding(2);
             this.startButton.Name = "startButton";
             this.startButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.startButton.Size = new System.Drawing.Size(217, 88);
@@ -92,7 +92,7 @@
             this.textBox1.BackColor = System.Drawing.Color.MediumAquamarine;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(38, 191);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(35, 13);
             this.textBox1.TabIndex = 5;
@@ -136,7 +136,7 @@
             this.wordsRadioButton.Checked = true;
             this.wordsRadioButton.Font = new System.Drawing.Font("Ravie", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordsRadioButton.Location = new System.Drawing.Point(23, 294);
-            this.wordsRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wordsRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.wordsRadioButton.Name = "wordsRadioButton";
             this.wordsRadioButton.Size = new System.Drawing.Size(220, 23);
             this.wordsRadioButton.TabIndex = 8;
@@ -151,7 +151,7 @@
             this.textRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textRadioButton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.textRadioButton.Location = new System.Drawing.Point(579, 292);
-            this.textRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.textRadioButton.Name = "textRadioButton";
             this.textRadioButton.Size = new System.Drawing.Size(202, 27);
             this.textRadioButton.TabIndex = 9;
@@ -176,7 +176,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(804, 403);
+            this.ClientSize = new System.Drawing.Size(804, 459);
             this.Controls.Add(this.lettersRadioButton);
             this.Controls.Add(this.textRadioButton);
             this.Controls.Add(this.wordsRadioButton);
@@ -186,7 +186,7 @@
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.totalClickLabel);
             this.Controls.Add(this.taskLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Задания";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

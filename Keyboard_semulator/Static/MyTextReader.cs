@@ -24,9 +24,15 @@ namespace Keyboard_semulator
 
         public static List<string> read (string path)
         {
-            List<string> listText = new List<string>();
-            listText.AddRange(File.ReadAllLines(path, Encoding.Default));
-            return listText;
+            try {
+                List<string> listText = new List<string>();
+                listText.AddRange(File.ReadAllLines(path, Encoding.Default));
+                return listText;
+            } catch (FileNotFoundException)
+            {
+                return null;
+            }
+            
         }
 
         //public string readTextFile(string appPatch, string fileName);
