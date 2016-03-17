@@ -32,7 +32,6 @@
             this.taskLabel = new System.Windows.Forms.Label();
             this.totalClickLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
-            this.listBoxTextFile = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.userTextLabel = new System.Windows.Forms.Label();
             this.simulationTimer = new System.Windows.Forms.Timer(this.components);
@@ -83,18 +82,6 @@
             this.startButton.Text = "Начать";
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButtonClick);
-            // 
-            // listBoxTextFile
-            // 
-            this.listBoxTextFile.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.listBoxTextFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxTextFile.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.listBoxTextFile.FormattingEnabled = true;
-            this.listBoxTextFile.Location = new System.Drawing.Point(23, 55);
-            this.listBoxTextFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBoxTextFile.Name = "listBoxTextFile";
-            this.listBoxTextFile.Size = new System.Drawing.Size(758, 130);
-            this.listBoxTextFile.TabIndex = 4;
             // 
             // textBox1
             // 
@@ -178,7 +165,6 @@
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.userTextLabel);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBoxTextFile);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.totalClickLabel);
             this.Controls.Add(this.taskLabel);
@@ -197,7 +183,6 @@
         private System.Windows.Forms.Label taskLabel;
         private System.Windows.Forms.Label totalClickLabel;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.ListBox listBoxTextFile;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label userTextLabel;
         private System.Windows.Forms.Timer simulationTimer;
