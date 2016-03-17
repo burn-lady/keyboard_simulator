@@ -42,13 +42,13 @@
             // 
             this.userComboBox.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.userComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userComboBox.Font = new System.Drawing.Font("Tempus Sans ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userComboBox.Font = new System.Drawing.Font("Tempus Sans ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userComboBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.userComboBox.FormattingEnabled = true;
             this.userComboBox.Location = new System.Drawing.Point(31, 6);
             this.userComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.userComboBox.Name = "userComboBox";
-            this.userComboBox.Size = new System.Drawing.Size(684, 24);
+            this.userComboBox.Size = new System.Drawing.Size(684, 23);
             this.userComboBox.TabIndex = 0;
             this.userComboBox.SelectedIndexChanged += new System.EventHandler(this.userComboBox_SelectedIndexChanged);
             this.userComboBox.SelectedValueChanged += new System.EventHandler(this.userComboBox_SelectedValueChanged);
@@ -115,9 +115,9 @@
             this.label1.Location = new System.Drawing.Point(179, 170);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 19);
+            this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Время набора контрольного текста";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2

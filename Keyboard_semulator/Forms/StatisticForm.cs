@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace Keyboard_semulator.Forms
     public partial class StatisticForm : Form
     {
         //деления,  для корректной отрисовки размеры GraphicsBox должны быть кратны этому числу
-        private static int CELL_DIVISION = 30; 
+        private static int CELL_DIVISION = 30;
+        private static int MODIFIER_INDENT_FOR_X = 2;
         private static int STEP_X = 30;
         private static int STEP_Y = 30;
 
@@ -91,9 +93,11 @@ namespace Keyboard_semulator.Forms
         private void drawSnoodAndCaption()
         {
             try
-            {                
+            {
+               
                 drawShood();
-                drawCaption();   
+                drawCaption();
+                drawString("Время набора текста", 0, 0 );
 
             } catch(System.NullReferenceException)
             {
@@ -102,39 +106,57 @@ namespace Keyboard_semulator.Forms
             
         }
 
+        private void drawString(string text, int x, int y)
+        {
+            StringFormat SF = StringFormat.GenericDefault;
+            SF.FormatFlags = StringFormatFlags.DirectionVertical;
+            GraphicsPath gPath = new GraphicsPath();
+            gPath.AddString(text,
+                FontFamily.GenericSerif,
+                0, // стиль
+                20, // размер
+                new Point(x, y),
+                SF);
+
+            g.DrawPath(new Pen(Brushes.Black), gPath);
+        }
+
         private void drawShood()
         {
             Pen pen = new Pen(Color.Gray, 1);
-            for (int bloc = CELL_DIVISION; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
+            for (int bloc = CELL_DIVISION*MODIFIER_INDENT_FOR_X; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
                 g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
 
             for (int bloc = graphicBox.Height; bloc > 0; bloc -= CELL_DIVISION)
-                    g.DrawLine(pen, CELL_DIVISION, graphicBox.Height - bloc, graphicBox.Size.Width, graphicBox.Height - bloc); // Горизонтальные линии
+                    g.DrawLine(pen, CELL_DIVISION*MODIFIER_INDENT_FOR_X, 
+                        graphicBox.Height - bloc, graphicBox.Size.Width, graphicBox.Height - bloc); // Горизонтальные линии
         }
       
         private void drawCaption()
         {
             Font font = new Font(FontFamily.GenericSerif, 10);
-                for (int i = CELL_DIVISION; i < graphicBox.Width; i += CELL_DIVISION)//
+                for (int i = CELL_DIVISION*MODIFIER_INDENT_FOR_X; i < graphicBox.Width; i += CELL_DIVISION)//
                 g.DrawString(((i / CELL_DIVISION) * STEP_Y).ToString(), font,
-                        Brushes.Black, new PointF(0, graphicBox.Height - i - CELL_DIVISION));// вертикаль
+                        Brushes.Black, new PointF(CELL_DIVISION, graphicBox.Height - i - CELL_DIVISION));// вертикаль
 
                 for (int i = 0; i < graphicBox.Width; i += CELL_DIVISION)
                 g.DrawString(((i + CELL_DIVISION) * STEP_X / CELL_DIVISION).ToString(),
-                        font, Brushes.Black, new PointF(i + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт
+                        font, Brushes.Black, 
+                        new PointF(i + CELL_DIVISION*MODIFIER_INDENT_FOR_X, graphicBox.Height - CELL_DIVISION));// горизонт
+            
         }
 
         private void drawGraphic(Session selectedSession)
         {
             try {
-            int x = CELL_DIVISION;
+            int x = CELL_DIVISION*MODIFIER_INDENT_FOR_X;
             List<Point> points = new List<Point>();
 
             foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
             {
                 points.Add(new Point(x,
                         graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION / STEP_Y)));
-                    x = CELL_DIVISION * timeBlock.secondStartSession / STEP_X + CELL_DIVISION;
+                    x = ( CELL_DIVISION * timeBlock.secondStartSession / STEP_X + CELL_DIVISION );
             }
             for (int i = 1; i < points.Count; i++)
             {
