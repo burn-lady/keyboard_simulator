@@ -37,12 +37,12 @@
             // userNameTextBox
             // 
             this.userNameTextBox.BackColor = System.Drawing.SystemColors.InfoText;
-            this.userNameTextBox.Font = new System.Drawing.Font("Snap ITC", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTextBox.ForeColor = System.Drawing.SystemColors.Menu;
             this.userNameTextBox.Location = new System.Drawing.Point(11, 11);
-            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(661, 23);
+            this.userNameTextBox.Size = new System.Drawing.Size(661, 21);
             this.userNameTextBox.TabIndex = 0;
             this.userNameTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
             // 
@@ -54,7 +54,7 @@
             this.addUserButton.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addUserButton.ForeColor = System.Drawing.SystemColors.MenuText;
             this.addUserButton.Location = new System.Drawing.Point(201, 48);
-            this.addUserButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addUserButton.Margin = new System.Windows.Forms.Padding(2);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(278, 72);
             this.addUserButton.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.usersListBox.FormattingEnabled = true;
             this.usersListBox.ItemHeight = 15;
             this.usersListBox.Location = new System.Drawing.Point(41, 210);
-            this.usersListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usersListBox.Margin = new System.Windows.Forms.Padding(2);
             this.usersListBox.Name = "usersListBox";
             this.usersListBox.Size = new System.Drawing.Size(599, 272);
             this.usersListBox.TabIndex = 2;
@@ -85,7 +85,7 @@
             this.crearAndCreateButton.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearAndCreateButton.ForeColor = System.Drawing.SystemColors.InfoText;
             this.crearAndCreateButton.Location = new System.Drawing.Point(201, 124);
-            this.crearAndCreateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.crearAndCreateButton.Margin = new System.Windows.Forms.Padding(2);
             this.crearAndCreateButton.Name = "crearAndCreateButton";
             this.crearAndCreateButton.Size = new System.Drawing.Size(278, 74);
             this.crearAndCreateButton.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.Controls.Add(this.usersListBox);
             this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.userNameTextBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UsersForm";
             this.Text = "Пользователи";
             this.ResumeLayout(false);

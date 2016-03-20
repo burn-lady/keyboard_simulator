@@ -46,26 +46,26 @@
             this.taskLabel.AutoSize = true;
             this.taskLabel.BackColor = System.Drawing.Color.MediumAquamarine;
             this.taskLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.taskLabel.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.taskLabel.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.taskLabel.Location = new System.Drawing.Point(23, 46);
+            this.taskLabel.Location = new System.Drawing.Point(11, 61);
             this.taskLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.taskLabel.Name = "taskLabel";
-            this.taskLabel.Size = new System.Drawing.Size(748, 27);
+            this.taskLabel.Size = new System.Drawing.Size(781, 36);
             this.taskLabel.TabIndex = 0;
-            this.taskLabel.Text = "Задание                                                                          " +
-    "        ";
+            this.taskLabel.Text = "Задание                                                           ";
             this.taskLabel.Click += new System.EventHandler(this.taskLabel_Click);
             // 
             // totalClickLabel
             // 
             this.totalClickLabel.AutoSize = true;
-            this.totalClickLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalClickLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalClickLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.totalClickLabel.Location = new System.Drawing.Point(77, 194);
+            this.totalClickLabel.Location = new System.Drawing.Point(287, 146);
             this.totalClickLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totalClickLabel.Name = "totalClickLabel";
-            this.totalClickLabel.Size = new System.Drawing.Size(91, 13);
+            this.totalClickLabel.Size = new System.Drawing.Size(207, 31);
             this.totalClickLabel.TabIndex = 1;
             this.totalClickLabel.Text = "totalClickLabel";
             this.totalClickLabel.Click += new System.EventHandler(this.totalClickLabel_Click);
@@ -77,11 +77,11 @@
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startButton.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.startButton.Location = new System.Drawing.Point(298, 240);
+            this.startButton.Location = new System.Drawing.Point(282, 191);
             this.startButton.Margin = new System.Windows.Forms.Padding(2);
             this.startButton.Name = "startButton";
             this.startButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.startButton.Size = new System.Drawing.Size(217, 88);
+            this.startButton.Size = new System.Drawing.Size(227, 88);
             this.startButton.TabIndex = 3;
             this.startButton.Text = "Начать";
             this.startButton.UseVisualStyleBackColor = false;
@@ -104,7 +104,7 @@
             this.userTextLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.userTextLabel.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.userTextLabel.Location = new System.Drawing.Point(9, 372);
+            this.userTextLabel.Location = new System.Drawing.Point(9, 403);
             this.userTextLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userTextLabel.Name = "userTextLabel";
             this.userTextLabel.Size = new System.Drawing.Size(155, 27);
@@ -122,7 +122,7 @@
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.timeLabel.Location = new System.Drawing.Point(9, 346);
+            this.timeLabel.Location = new System.Drawing.Point(59, 377);
             this.timeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(105, 26);
@@ -134,26 +134,26 @@
             this.wordsRadioButton.AutoSize = true;
             this.wordsRadioButton.BackColor = System.Drawing.Color.MediumAquamarine;
             this.wordsRadioButton.Checked = true;
-            this.wordsRadioButton.Font = new System.Drawing.Font("Ravie", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordsRadioButton.Location = new System.Drawing.Point(23, 294);
+            this.wordsRadioButton.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordsRadioButton.Location = new System.Drawing.Point(347, 335);
             this.wordsRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.wordsRadioButton.Name = "wordsRadioButton";
-            this.wordsRadioButton.Size = new System.Drawing.Size(220, 23);
+            this.wordsRadioButton.Size = new System.Drawing.Size(90, 26);
             this.wordsRadioButton.TabIndex = 8;
             this.wordsRadioButton.TabStop = true;
-            this.wordsRadioButton.Text = " БуКвЫ, сИмВоЛы, сЛоВа";
+            this.wordsRadioButton.Text = "СлОвА";
             this.wordsRadioButton.UseVisualStyleBackColor = false;
             this.wordsRadioButton.CheckedChanged += new System.EventHandler(this.wordsRadioButton_CheckedChanged);
             // 
             // textRadioButton
             // 
             this.textRadioButton.AutoSize = true;
-            this.textRadioButton.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textRadioButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textRadioButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.textRadioButton.Location = new System.Drawing.Point(579, 292);
+            this.textRadioButton.Location = new System.Drawing.Point(546, 278);
             this.textRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.textRadioButton.Name = "textRadioButton";
-            this.textRadioButton.Size = new System.Drawing.Size(202, 27);
+            this.textRadioButton.Size = new System.Drawing.Size(246, 32);
             this.textRadioButton.TabIndex = 9;
             this.textRadioButton.TabStop = true;
             this.textRadioButton.Text = "КОНТРОЛЬНЫЙ ТЕКСТ";
@@ -163,12 +163,13 @@
             // lettersRadioButton
             // 
             this.lettersRadioButton.AutoSize = true;
-            this.lettersRadioButton.Location = new System.Drawing.Point(23, 272);
+            this.lettersRadioButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lettersRadioButton.Location = new System.Drawing.Point(12, 278);
             this.lettersRadioButton.Name = "lettersRadioButton";
-            this.lettersRadioButton.Size = new System.Drawing.Size(53, 17);
+            this.lettersRadioButton.Size = new System.Drawing.Size(216, 32);
             this.lettersRadioButton.TabIndex = 10;
             this.lettersRadioButton.TabStop = true;
-            this.lettersRadioButton.Text = "letters";
+            this.lettersRadioButton.Text = "БУКВЫ и СИМВОЛЫ";
             this.lettersRadioButton.UseVisualStyleBackColor = true;
             // 
             // Form1
