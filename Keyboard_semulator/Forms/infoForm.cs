@@ -17,7 +17,6 @@ namespace Keyboard_semulator.Forms
             InitializeComponent();
 
             label1.Text = message;
-            radioButton1.Text = message;
         }
 
         private void InfoForm_Load(object sender, EventArgs e)
@@ -26,6 +25,11 @@ namespace Keyboard_semulator.Forms
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
