@@ -59,7 +59,7 @@ namespace Keyboard_semulator
 
         private void createComponents()
         {
-            taskLabel.Font = new Font("Arial", 17, FontStyle.Italic);
+            taskLabel.Font = new Font("Arial", 27, FontStyle.Italic);
         }
 
         public Form1(string userName)
@@ -233,7 +233,7 @@ namespace Keyboard_semulator
         {
             sessionTime++;
             sessionTimeBlock++;
-            timeLabel.Text = "Время: " + sessionTime ;
+            timeLabel.Text = "Время (сек.): " + sessionTime ;
             if(Constanta.TIME_BLOCK_SECOND == sessionTimeBlock) fixBlock();
                            
         }

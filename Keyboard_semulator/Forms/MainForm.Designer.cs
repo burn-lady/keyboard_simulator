@@ -40,7 +40,7 @@
             // 
             // newGameButton
             // 
-            this.newGameButton.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.newGameButton.BackColor = System.Drawing.Color.MediumTurquoise;
             this.newGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newGameButton.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newGameButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -55,7 +55,7 @@
             // 
             // settingsButton
             // 
-            this.settingsButton.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.settingsButton.BackColor = System.Drawing.Color.MediumTurquoise;
             this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingsButton.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.Location = new System.Drawing.Point(660, 411);
@@ -71,7 +71,7 @@
             this.statisticsButton.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.statisticsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.statisticsButton.Font = new System.Drawing.Font("Ravie", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statisticsButton.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.statisticsButton.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.statisticsButton.Location = new System.Drawing.Point(74, 300);
             this.statisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.statisticsButton.Name = "statisticsButton";
@@ -86,7 +86,7 @@
             this.UsersBox.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.UsersBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UsersBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersBox.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.UsersBox.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.UsersBox.FormattingEnabled = true;
             this.UsersBox.Location = new System.Drawing.Point(4, 50);
             this.UsersBox.Margin = new System.Windows.Forms.Padding(2);
@@ -94,6 +94,7 @@
             this.UsersBox.Size = new System.Drawing.Size(272, 21);
             this.UsersBox.Sorted = true;
             this.UsersBox.TabIndex = 3;
+            this.UsersBox.SelectedIndexChanged += new System.EventHandler(this.UsersBox_SelectedIndexChanged);
             this.UsersBox.Click += new System.EventHandler(this.UsersBox_Click);
             // 
             // usersButton
@@ -101,7 +102,7 @@
             this.usersButton.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.usersButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.usersButton.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usersButton.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.usersButton.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.usersButton.Location = new System.Drawing.Point(74, 111);
             this.usersButton.Margin = new System.Windows.Forms.Padding(2);
             this.usersButton.Name = "usersButton";

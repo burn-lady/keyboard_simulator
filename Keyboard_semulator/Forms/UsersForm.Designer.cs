@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.addUserButton = new System.Windows.Forms.Button();
             this.usersListBox = new System.Windows.Forms.ListBox();
             this.crearAndCreateButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // userNameTextBox
@@ -48,7 +51,7 @@
             // 
             // addUserButton
             // 
-            this.addUserButton.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.addUserButton.BackColor = System.Drawing.Color.SkyBlue;
             this.addUserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addUserButton.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,7 +83,7 @@
             // 
             // crearAndCreateButton
             // 
-            this.crearAndCreateButton.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.crearAndCreateButton.BackColor = System.Drawing.Color.SkyBlue;
             this.crearAndCreateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.crearAndCreateButton.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crearAndCreateButton.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -93,6 +96,15 @@
             this.crearAndCreateButton.UseVisualStyleBackColor = false;
             this.crearAndCreateButton.Click += new System.EventHandler(this.crearAndCreateButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(686, 495);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,9 +115,11 @@
             this.Controls.Add(this.usersListBox);
             this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.userNameTextBox);
+            this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UsersForm";
             this.Text = "Пользователи";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +131,6 @@
         private System.Windows.Forms.Button addUserButton;
         private System.Windows.Forms.ListBox usersListBox;
         private System.Windows.Forms.Button crearAndCreateButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

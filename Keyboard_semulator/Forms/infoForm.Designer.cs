@@ -65,7 +65,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "InfoForm";
-            this.Text = "infoForm";
+            this.Text = "Задание выполнено!";
             this.Load += new System.EventHandler(this.InfoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
