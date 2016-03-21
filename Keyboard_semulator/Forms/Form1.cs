@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Keyboard_semulator.Data;
+using Keyboard_semulator.Forms;
 
 
 
@@ -15,7 +16,7 @@ namespace Keyboard_semulator
 {
     public partial class Form1 : Form
     {
-     
+        
         int sessionTime;
         int sessionTimeBlock;
 
@@ -39,6 +40,7 @@ namespace Keyboard_semulator
 
         private void createVariables ()
         {
+          
             errorLetters = new Dictionary<char, int>();
             listTimeBlocksCLiks = new List<TimeBlockCliks>();
 
@@ -186,8 +188,9 @@ namespace Keyboard_semulator
             textBox1.Clear();
             saveResult();
             fixBlock();
-            MessageBox.Show("Вы закончили упражнение! \n" + DateTime.Now.ToString());
-        }
+          //  MessageBox.Show("Вы закончили упражнение! \n" + DateTime.Now.ToString());
+            new InfoForm(userName + " WIN!  \n"+ DateTime.Now.ToString()).ShowDialog();
+                    }
 
         private void saveResult()
         {
@@ -251,6 +254,16 @@ namespace Keyboard_semulator
         }
 
         private void taskLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lettersRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 
         }

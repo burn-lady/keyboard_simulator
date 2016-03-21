@@ -171,6 +171,7 @@
             this.lettersRadioButton.TabStop = true;
             this.lettersRadioButton.Text = "БУКВЫ и СИМВОЛЫ";
             this.lettersRadioButton.UseVisualStyleBackColor = true;
+            this.lettersRadioButton.CheckedChanged += new System.EventHandler(this.lettersRadioButton_CheckedChanged);
             // 
             // Form1
             // 
@@ -190,6 +191,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Задания";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
