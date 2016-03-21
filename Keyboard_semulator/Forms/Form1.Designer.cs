@@ -107,9 +107,9 @@
             this.userTextLabel.Location = new System.Drawing.Point(9, 403);
             this.userTextLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userTextLabel.Name = "userTextLabel";
-            this.userTextLabel.Size = new System.Drawing.Size(155, 27);
+            this.userTextLabel.Size = new System.Drawing.Size(173, 27);
             this.userTextLabel.TabIndex = 6;
-            this.userTextLabel.Text = "Пользователь";
+            this.userTextLabel.Text = "Пользователь :";
             // 
             // simulationTimer
             // 
@@ -125,9 +125,9 @@
             this.timeLabel.Location = new System.Drawing.Point(59, 377);
             this.timeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(105, 26);
+            this.timeLabel.Size = new System.Drawing.Size(117, 26);
             this.timeLabel.TabIndex = 7;
-            this.timeLabel.Text = "Время (с)";
+            this.timeLabel.Text = "Время (с) :";
             // 
             // wordsRadioButton
             // 
