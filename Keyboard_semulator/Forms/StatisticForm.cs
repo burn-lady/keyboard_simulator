@@ -14,7 +14,7 @@ namespace Keyboard_semulator.Forms
 {
     public partial class StatisticForm : Form
     {
-        //деления,  для корректной отрисовки размеры GraphicsBox должны быть кратны этому числу
+        //деления,  для корректной отрисовки размеры GraphicsBox (Size) должны быть кратны этому числу
         private static int CELL_DIVISION = 30;
         private static int MODIFIER_INDENT_FOR_X = 2;
         private static int STEP_X = 30;
@@ -74,7 +74,6 @@ namespace Keyboard_semulator.Forms
 
             g.Clear(Color.White);
             drawSnoodAndCaption();
-            drawGraphic();
             }
             catch (System.NullReferenceException)
             {
@@ -93,11 +92,10 @@ namespace Keyboard_semulator.Forms
         private void drawSnoodAndCaption()
         {
             try
-            {
-               
+            {             
                 drawShood();
                 drawCaption();
-                drawString("Время набора текста", 0, 0 );
+                drawString("Количество нажатий в общем", new Point(0,0));
 
             } catch(System.NullReferenceException)
             {
@@ -106,7 +104,7 @@ namespace Keyboard_semulator.Forms
             
         }
 
-        private void drawString(string text, int x, int y)
+        private void drawString(string text, Point point)
         {
             StringFormat SF = StringFormat.GenericDefault;
             SF.FormatFlags = StringFormatFlags.DirectionVertical;
@@ -115,7 +113,7 @@ namespace Keyboard_semulator.Forms
                 FontFamily.GenericSerif,
                 0, // стиль
                 20, // размер
-                new Point(x, y),
+                point,
                 SF);
 
             g.DrawPath(new Pen(Brushes.Black), gPath);
@@ -123,7 +121,7 @@ namespace Keyboard_semulator.Forms
 
         private void drawShood()
         {
-            Pen pen = new Pen(Color.Gray, 1);
+            Pen pen = new Pen(Color.Green, 1);
             for (int bloc = CELL_DIVISION*MODIFIER_INDENT_FOR_X; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
                 g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
 
@@ -137,10 +135,11 @@ namespace Keyboard_semulator.Forms
             Font font = new Font(FontFamily.GenericSerif, 10);
                 for (int y = CELL_DIVISION; y < graphicBox.Width; y += CELL_DIVISION)//
                 g.DrawString(((y / CELL_DIVISION) * STEP_Y).ToString(), font,
-                        Brushes.Black, new PointF(CELL_DIVISION, graphicBox.Height - y - CELL_DIVISION));// вертикаль
+                        Brushes.Black,
+                        new PointF(CELL_DIVISION, graphicBox.Height - y - CELL_DIVISION - (CELL_DIVISION/2)));// вертикаль
 
                 for (int x = 0; x < graphicBox.Width; x += CELL_DIVISION)
-                g.DrawString(((x + CELL_DIVISION) * STEP_X / CELL_DIVISION).ToString(),
+                g.DrawString(((x + CELL_DIVISION) * STEP_X /CELL_DIVISION).ToString(),
                         font, Brushes.Black, 
                         new PointF(x + CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт            
         }
@@ -148,18 +147,20 @@ namespace Keyboard_semulator.Forms
         private void drawGraphic(Session selectedSession)
         {
             try {
-            int x = CELL_DIVISION*MODIFIER_INDENT_FOR_X;
+            int x = CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION /STEP_X;
             List<Point> points = new List<Point>();
 
             foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
             {
                 points.Add(new Point(x,
                         graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION / STEP_Y)));
-                    x = ( CELL_DIVISION * timeBlock.secondStartSession / STEP_X + CELL_DIVISION );
+                     x = ( CELL_DIVISION * timeBlock.secondStartSession / STEP_X ) + CELL_DIVISION*MODIFIER_INDENT_FOR_X ;
+                    
+                    
             }
             for (int i = 1; i < points.Count; i++)
             {
-                g.DrawLine(new Pen(Color.Red, 2), points[i - 1], points[i]);
+                g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
             }
             } catch (NullReferenceException)
             {
@@ -168,20 +169,7 @@ namespace Keyboard_semulator.Forms
 
         }
 
-        private void drawGraphic()
-        {
-            int x = CELL_DIVISION;
-            List<Point> points = new List<Point>();
-            foreach (Session session in selectedUser.listSessions)
-            {                                              
-                    points.Add(new Point(x, graphicBox.Size.Height - CELL_DIVISION - session.sessionTime * 1));
-                    x +=  CELL_DIVISION;                 
-            }
-            for (int i=1; i<points.Count; i++)
-            {
-                g.DrawLine(new Pen(Color.Red, 2), points[i - 1], points[i]);
-            }
-        }
+
 
         private void userComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
