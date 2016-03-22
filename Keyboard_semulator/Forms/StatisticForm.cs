@@ -28,6 +28,7 @@ namespace Keyboard_semulator.Forms
         {
             sessionTypeComboBox.Items.Add(Session.CONTROL_WORDS_SESSION);
             sessionTypeComboBox.Items.Add(Session.CONTROL_TEXT_SESSION);
+            sessionTypeComboBox.Items.Add(Session.CONTROL_LETTERS_SESSION);
             userComboBox.SelectedIndex = 0;
             sessionTypeComboBox.SelectedIndex = 0;
         }

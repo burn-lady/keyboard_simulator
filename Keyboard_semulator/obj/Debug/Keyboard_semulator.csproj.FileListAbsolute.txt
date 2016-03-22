@@ -36,3 +36,4 @@ D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Ma
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.StatisticForm.resources
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.InfoForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.InfoForm.resources
