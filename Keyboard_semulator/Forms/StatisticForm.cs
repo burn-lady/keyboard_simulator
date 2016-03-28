@@ -16,9 +16,13 @@ namespace Keyboard_semulator.Forms
     {
         //деления,  для корректной отрисовки размеры GraphicsBox (Size) должны быть кратны этому числу
         private static int CELL_DIVISION = 30;
-        private static int MODIFIER_INDENT_FOR_X = 2;
-        private static int STEP_X = 30;
-        private static int STEP_Y = 30;
+        int MODIFIER_INDENT_FOR_X = 2;
+
+        double captionCellDivision_X = 30;
+        double captionCellDivision_Y = 30;
+
+        double pointOfDivision_X;
+        double pointOfDivision_Y;
 
         List<User> listUsers;
         User selectedUser = null;
@@ -85,8 +89,18 @@ namespace Keyboard_semulator.Forms
         private void updateGraphicsBox(Session selectedSession)
         {
             g.Clear(Color.White);
+            adapteSizes(selectedSession);
             drawSnoodAndCaption();
             drawGraphic(selectedSession);
+        }
+
+        private void adapteSizes (Session session)
+        {
+            pointOfDivision_X = session.sessionTime / graphicBox.Width;
+            pointOfDivision_Y = session.totalClicks / graphicBox.Height;
+            captionCellDivision_X =  Math.Round(pointOfDivision_X * CELL_DIVISION, 14);
+            captionCellDivision_Y =  Math.Round(pointOfDivision_Y * CELL_DIVISION, 14);
+
         }
 
         // Нарисовать клеточки
@@ -105,6 +119,17 @@ namespace Keyboard_semulator.Forms
             
         }
 
+        private void drawShood()
+        {
+            Pen pen = new Pen(Color.Green, 1);
+            for (int x = CELL_DIVISION * MODIFIER_INDENT_FOR_X; x < graphicBox.Size.Width; x += CELL_DIVISION)
+                g.DrawLine(pen, x, 0, x, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
+
+            for (int y = graphicBox.Height; y > 0; y -= CELL_DIVISION)
+                g.DrawLine(pen, CELL_DIVISION * MODIFIER_INDENT_FOR_X,
+                    graphicBox.Height - y, graphicBox.Size.Width, graphicBox.Height - y); // Горизонтальные линии
+        }
+
         private void drawString(string text, Point point)
         {
             StringFormat SF = StringFormat.GenericDefault;
@@ -120,55 +145,66 @@ namespace Keyboard_semulator.Forms
             g.DrawPath(new Pen(Brushes.Black), gPath);
         }
 
-        private void drawShood()
-        {
-            Pen pen = new Pen(Color.Green, 1);
-            for (int bloc = CELL_DIVISION*MODIFIER_INDENT_FOR_X; bloc < graphicBox.Size.Width; bloc += CELL_DIVISION)
-                g.DrawLine(pen, bloc, 0, bloc, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
-
-            for (int bloc = graphicBox.Height; bloc > 0; bloc -= CELL_DIVISION)
-                    g.DrawLine(pen, CELL_DIVISION*MODIFIER_INDENT_FOR_X, 
-                        graphicBox.Height - bloc, graphicBox.Size.Width, graphicBox.Height - bloc); // Горизонтальные линии
-        }
-      
         private void drawCaption()
         {
             Font font = new Font(FontFamily.GenericSerif, 10);
-                for (int y = CELL_DIVISION; y < graphicBox.Width; y += CELL_DIVISION)//
-                g.DrawString(((y / CELL_DIVISION) * STEP_Y).ToString(), font,
+            double caption = 0;
+            for (int y = CELL_DIVISION; y < graphicBox.Width; y += CELL_DIVISION)
+            { //
+                g.DrawString(caption.ToString(), font,
                         Brushes.Black,
-                        new PointF(CELL_DIVISION, graphicBox.Height - y - CELL_DIVISION - (CELL_DIVISION/2)));// вертикаль
+                        new PointF(CELL_DIVISION, graphicBox.Height - y - CELL_DIVISION - (CELL_DIVISION / 2)));// вертикаль
+                caption += captionCellDivision_Y;
+            }
 
-                for (int x = 0; x < graphicBox.Width; x += CELL_DIVISION)
-                g.DrawString(((x + CELL_DIVISION) * STEP_X /CELL_DIVISION).ToString(),
-                        font, Brushes.Black, 
-                        new PointF(x + CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт            
+            caption = 0;
+            for (int x = 0; x < graphicBox.Width; x += CELL_DIVISION)
+            {
+                g.DrawString(caption.ToString(),
+                        font, Brushes.Black,
+                        new PointF(x + CELL_DIVISION * MODIFIER_INDENT_FOR_X + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт       
+                caption += captionCellDivision_X;
+
+             }     
         }
 
-        private void drawGraphic(Session selectedSession)
+        private void drawGraphic (Session selectedSession)
         {
-            try {
-            int x = CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION /STEP_X;
-            List<Point> points = new List<Point>();
+            try
+            {
+                
 
-            foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
-            {
-                points.Add(new Point(x,
-                        graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION / STEP_Y)));
-                     x = ( CELL_DIVISION * timeBlock.secondStartSession / STEP_X ) + CELL_DIVISION*MODIFIER_INDENT_FOR_X ;
-                    
-                    
             }
-            for (int i = 1; i < points.Count; i++)
+            catch
             {
-                g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
-            }
-            } catch (NullReferenceException)
-            {
-                MessageBox.Show("Пользователи загружаются..");
-            }
 
+            }
         }
+
+        //private void drawGraphic(Session selectedSession)
+        //{
+        //    try {
+        //    int x = CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION /captionCellDivision_X;
+        //    List<Point> points = new List<Point>();
+
+        //    foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
+        //    {
+        //        points.Add(new Point(x,
+        //                graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION / captionCellDivision_Y)));
+        //             x = ( CELL_DIVISION * timeBlock.secondStartSession / captionCellDivision_X ) + CELL_DIVISION*MODIFIER_INDENT_FOR_X ;
+
+
+        //    }
+        //    for (int i = 1; i < points.Count; i++)
+        //    {
+        //        g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
+        //    }
+        //    } catch (NullReferenceException)
+        //    {
+        //        MessageBox.Show("Пользователи загружаются..");
+        //    }
+
+        //}
 
 
 
