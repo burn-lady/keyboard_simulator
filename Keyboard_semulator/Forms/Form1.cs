@@ -36,13 +36,13 @@ namespace Keyboard_semulator
         string sessionType;
 
         public Dictionary<char, int> errorLetters;
-        List<TimeBlockCliks> listTimeBlocksCLiks;
+        Dictionary<int, int> dictionaryTimeBlocksClicks;
 
         private void createVariables ()
         {
           
             errorLetters = new Dictionary<char, int>();
-            listTimeBlocksCLiks = new List<TimeBlockCliks>();
+            dictionaryTimeBlocksClicks = new Dictionary<int, int>();
 
             errorClicks = 0;
             totalClicks = 0;
@@ -199,7 +199,7 @@ namespace Keyboard_semulator
             listUsers.Remove(user);
             if (user.A_first == 0) user.A_first = sessionTime; 
             user.listSessions.Add(new Session
-                (sessionType ,totalClicks, errorClicks, sessionTime, maxWords, errorLetters, listTimeBlocksCLiks));
+                (sessionType ,totalClicks, errorClicks, sessionTime, maxWords, errorLetters, dictionaryTimeBlocksClicks));
             listUsers.Add(user);
             Serializer.writeObject(Serializer.FILE_USERS, listUsers);
         }
@@ -224,8 +224,8 @@ namespace Keyboard_semulator
 
         private void fixBlock()
         {
-            sessionTimeBlock = 0;
-            listTimeBlocksCLiks.Add(new TimeBlockCliks(sessionTime, totalClicks));
+            sessionTimeBlock = 0;          
+            dictionaryTimeBlocksClicks.Add(sessionTime, totalClicks);
             
         }
 

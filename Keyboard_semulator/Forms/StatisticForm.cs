@@ -97,9 +97,9 @@ namespace Keyboard_semulator.Forms
         private void adapteSizes (Session session)
         {
            
-           pointOfDivision_X = (double) session.sessionTime / (graphicBox.Width - CELL_DIVISION*4);
+          double debug = pointOfDivision_X = (double) session.sessionTime / (graphicBox.Width - CELL_DIVISION*4);
            pointOfDivision_Y = (double) session.totalClicks / (graphicBox.Height - CELL_DIVISION*2);
-           captionCellDivision_X =  Math.Round(pointOfDivision_X * CELL_DIVISION, 1);
+           captionCellDivision_X =  Math.Round(pointOfDivision_X * CELL_DIVISION);
            captionCellDivision_Y =  Math.Round(pointOfDivision_Y * CELL_DIVISION, 1);
 
         }
@@ -173,13 +173,42 @@ namespace Keyboard_semulator.Forms
         {
             try
             {
-                double x = CELL_DIVISION * MODIFIER_INDENT_FOR_X + 1;
+                int x = CELL_DIVISION * MODIFIER_INDENT_FOR_X;
+
                 List<Point> points = new List<Point>();
-                foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
+
+                //int inc = 0;
+                //while (x < graphicBox.Width)
+                //{
+                //    if (inc == selectedSession.listTimeBlockClicks.Count) break;
+
+                //    points.Add(new Point (x , getPointY(selectedSession.listTimeBlockClicks[inc].countClicks)));
+                //    x += CELL_DIVISION;
+
+                //    int step = (int)Math.Round(pointOfDivision_X);
+                //    if (step >= 1) inc += step;
+                //    else inc++;
+
+                //}
+
+                
+
+                while ( x < graphicBox.Width)
                 {
-                    points.Add(new Point(getPointX(x), getPointY(timeBlock)));
-                    x += pointOfDivision_X;
+                    points.Add(new Point
+                        (x,
+                        getPointY(selectedSession.dictionaryTimeBlockClicks[x / CELL_DIVISION])));
+                    x += CELL_DIVISION;
                 }
+
+                //foreach (KeyValuePair<int, int> value in selectedSession.dictionaryTimeBlockClicks)
+                //{
+                   
+                //        points.Add(new Point(getPointX(x), getPointY(value.Value)));
+                //        x += pointOfDivision_X;
+                     
+                //}
+
                 for (int i = 1; i < points.Count; i++)
                 {
                     g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
@@ -192,14 +221,14 @@ namespace Keyboard_semulator.Forms
 }
         private int getPointX (double x)
         {
-            
-            return (int)Math.Round(x);
-            
+          //  x *= CELL_DIVISION;
+            if (x <= 1) return 1;
+            return (int) Math.Round(x);   
         }
 
-        private int getPointY(TimeBlockCliks timeBlock)
+        private int getPointY(int countClicks)
         {
-            double realY = (int)Math.Round(timeBlock.countClicks / pointOfDivision_Y);
+            double realY = (int)Math.Round(countClicks / pointOfDivision_Y);
             return (int)graphicBox.Height - CELL_DIVISION - (int)realY;
         }
 
