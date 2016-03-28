@@ -9,7 +9,7 @@ namespace Keyboard_semulator.Data
     [Serializable()]
     public class TimeBlockCliks
     {
-        public int secondStartSession; // По идее, самое первое значение будет равно 5, а не 0
+        public int secondStartSession; 
         public int countClicks;
 
         public TimeBlockCliks(int secondStartSession, int countClicks)

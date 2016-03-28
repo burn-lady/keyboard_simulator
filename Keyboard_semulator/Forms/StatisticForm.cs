@@ -96,10 +96,11 @@ namespace Keyboard_semulator.Forms
 
         private void adapteSizes (Session session)
         {
-            pointOfDivision_X = session.sessionTime / graphicBox.Width;
-            pointOfDivision_Y = session.totalClicks / graphicBox.Height;
-            captionCellDivision_X =  Math.Round(pointOfDivision_X * CELL_DIVISION, 14);
-            captionCellDivision_Y =  Math.Round(pointOfDivision_Y * CELL_DIVISION, 14);
+           
+           pointOfDivision_X = (double) session.sessionTime / (graphicBox.Width - CELL_DIVISION*4);
+           pointOfDivision_Y = (double) session.totalClicks / (graphicBox.Height - CELL_DIVISION*2);
+           captionCellDivision_X =  Math.Round(pointOfDivision_X * CELL_DIVISION, 1);
+           captionCellDivision_Y =  Math.Round(pointOfDivision_Y * CELL_DIVISION, 1);
 
         }
 
@@ -149,7 +150,7 @@ namespace Keyboard_semulator.Forms
         {
             Font font = new Font(FontFamily.GenericSerif, 10);
             double caption = 0;
-            for (int y = CELL_DIVISION; y < graphicBox.Width; y += CELL_DIVISION)
+            for (int y = 0; y < graphicBox.Width; y += CELL_DIVISION)
             { //
                 g.DrawString(caption.ToString(), font,
                         Brushes.Black,
@@ -162,7 +163,7 @@ namespace Keyboard_semulator.Forms
             {
                 g.DrawString(caption.ToString(),
                         font, Brushes.Black,
-                        new PointF(x + CELL_DIVISION * MODIFIER_INDENT_FOR_X + CELL_DIVISION, graphicBox.Height - CELL_DIVISION));// горизонт       
+                        new PointF(x + CELL_DIVISION * MODIFIER_INDENT_FOR_X, graphicBox.Height - CELL_DIVISION));// горизонт       
                 caption += captionCellDivision_X;
 
              }     
@@ -172,13 +173,34 @@ namespace Keyboard_semulator.Forms
         {
             try
             {
-                
+                double x = CELL_DIVISION * MODIFIER_INDENT_FOR_X + 1;
+                List<Point> points = new List<Point>();
+                foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
+                {
+                    points.Add(new Point(getPointX(x), getPointY(timeBlock)));
+                    x += pointOfDivision_X;
+                }
+                for (int i = 1; i < points.Count; i++)
+                {
+                    g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
+                }
+             }
+            catch (NullReferenceException)
+             {
+                MessageBox.Show("Пользователи загружаются..");
+             }
+}
+        private int getPointX (double x)
+        {
+            
+            return (int)Math.Round(x);
+            
+        }
 
-            }
-            catch
-            {
-
-            }
+        private int getPointY(TimeBlockCliks timeBlock)
+        {
+            double realY = (int)Math.Round(timeBlock.countClicks / pointOfDivision_Y);
+            return (int)graphicBox.Height - CELL_DIVISION - (int)realY;
         }
 
         //private void drawGraphic(Session selectedSession)

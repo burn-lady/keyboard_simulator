@@ -8,6 +8,6 @@ namespace Keyboard_semulator.Data
 {
     class Constanta
     {
-        public static int TIME_BLOCK_SECOND = 5;
+        public static int TIME_BLOCK_SECOND = 1;
     }
 }

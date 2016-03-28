@@ -190,7 +190,7 @@ namespace Keyboard_semulator
             fixBlock();
           //  MessageBox.Show("Вы закончили упражнение! \n" + DateTime.Now.ToString());
             new InfoForm(userName + " , Поздравляем! Вы закончили упражнение!  \n"+"               "+ DateTime.Now.ToString()).ShowDialog();
-                    }
+        }
 
         private void saveResult()
         {
