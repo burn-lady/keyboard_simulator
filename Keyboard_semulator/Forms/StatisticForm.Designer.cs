@@ -28,17 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticForm));
             this.userComboBox = new System.Windows.Forms.ComboBox();
             this.dateListBox = new System.Windows.Forms.ListBox();
             this.InfoListBox = new System.Windows.Forms.ListBox();
-            this.graphicBox = new System.Windows.Forms.PictureBox();
             this.sessionTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.graphicBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // userComboBox
@@ -84,16 +79,6 @@
             this.InfoListBox.Size = new System.Drawing.Size(681, 94);
             this.InfoListBox.TabIndex = 2;
             // 
-            // graphicBox
-            // 
-            this.graphicBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.graphicBox.Location = new System.Drawing.Point(275, 217);
-            this.graphicBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.graphicBox.Name = "graphicBox";
-            this.graphicBox.Size = new System.Drawing.Size(719, 329);
-            this.graphicBox.TabIndex = 3;
-            this.graphicBox.TabStop = false;
-            // 
             // sessionTypeComboBox
             // 
             this.sessionTypeComboBox.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
@@ -134,18 +119,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Время сессии";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1005, 605);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // StatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,17 +128,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sessionTypeComboBox);
-            this.Controls.Add(this.graphicBox);
             this.Controls.Add(this.InfoListBox);
             this.Controls.Add(this.dateListBox);
             this.Controls.Add(this.userComboBox);
-            this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StatisticForm";
             this.Text = "Статистика ";
             this.Load += new System.EventHandler(this.StatisticForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.graphicBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,10 +145,8 @@
         private System.Windows.Forms.ComboBox userComboBox;
         private System.Windows.Forms.ListBox dateListBox;
         private System.Windows.Forms.ListBox InfoListBox;
-        private System.Windows.Forms.PictureBox graphicBox;
         private System.Windows.Forms.ComboBox sessionTypeComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -37,3 +37,18 @@ D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Fo
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.UsersForm.resources
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.InfoForm.resources
 D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Debug\Keyboard_semulator.Forms.InfoForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\ZedGraph.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\ZedGraph.xml
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\de\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\es\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\fr\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\hu\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\it\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\ja\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\pt\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\ru\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\sk\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\sv\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\tr\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Debug\zh-tw\ZedGraph.resources.dll

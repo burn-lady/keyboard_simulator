@@ -28,6 +28,64 @@ namespace Keyboard_semulator.Forms
         User selectedUser = null;
         Graphics g;
 
+        private ZedGraph.ZedGraphControl zGraph;
+
+   
+
+        public StatisticForm()
+        {
+            InitializeComponent();
+            initZGraph();
+            loadUsers();
+            initInterface();
+       
+           // g = graphicBox.CreateGraphics();
+          
+        }
+
+        private void initZGraph()
+        {
+            zGraph = new ZedGraph.ZedGraphControl();
+            this.SuspendLayout();
+            this.zGraph.IsShowPointValues = false;
+            this.zGraph.Location = new System.Drawing.Point(200, 150);
+            this.zGraph.Name = "zGraph";
+            this.zGraph.PointValueFormat = "G";
+            this.zGraph.Size = new System.Drawing.Size(500, 329);
+            this.zGraph.TabIndex = 0;
+
+            this.Controls.Add(this.zGraph);
+
+
+
+            /*
+             this.z1 = new ZedGraph.ZedGraphControl();
+        this.SuspendLayout();
+        // 
+        // z1
+        // 
+        this.z1.IsShowPointValues = false;
+        this.z1.Location = new System.Drawing.Point(0, 0);
+        this.z1.Name = "z1";
+        this.z1.PointValueFormat = "G";
+        this.z1.Size = new System.Drawing.Size(816, 478);
+        this.z1.TabIndex = 0;
+        // 
+        // Form1
+        // 
+        this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
+        this.ClientSize = new System.Drawing.Size(856, 512);
+        this.Controls.Add(this.z1);
+        this.Name = "Form1";
+        this.Text = "Form1";
+        this.Load += new System.EventHandler(this.Form1_Load);
+        this.ResumeLayout(false);
+
+    }
+
+*/
+        }
+
         private void initInterface()
         {
             sessionTypeComboBox.Items.Add(Session.CONTROL_WORDS_SESSION);
@@ -35,16 +93,6 @@ namespace Keyboard_semulator.Forms
             sessionTypeComboBox.Items.Add(Session.CONTROL_LETTERS_SESSION);
             userComboBox.SelectedIndex = 0;
             sessionTypeComboBox.SelectedIndex = 0;
-        }
-
-        public StatisticForm()
-        {
-            InitializeComponent();
-            loadUsers();
-            initInterface();
-       
-            g = graphicBox.CreateGraphics();
-          
         }
 
         private void StatisticForm_Load(object sender, EventArgs e)
@@ -73,191 +121,40 @@ namespace Keyboard_semulator.Forms
             return Math.Log(T_selectSessionTime / A_first) / t_allTime;
         }
 
-        private void updateGraphicsBox()
-            {
-            try { 
-
-            g.Clear(Color.White);
-            drawSnoodAndCaption();
-            }
-            catch (System.NullReferenceException)
-            {
-                g = graphicBox.CreateGraphics();
-            }
-        }
 
         private void updateGraphicsBox(Session selectedSession)
         {
             g.Clear(Color.White);
-            adapteSizes(selectedSession);
-            drawSnoodAndCaption();
             drawGraphic(selectedSession);
         }
 
-        private void adapteSizes (Session session)
-        {
-           
-          double debug = pointOfDivision_X = (double) session.sessionTime / (graphicBox.Width - CELL_DIVISION*4);
-           pointOfDivision_Y = (double) session.totalClicks / (graphicBox.Height - CELL_DIVISION*2);
-           captionCellDivision_X =  Math.Round(pointOfDivision_X * CELL_DIVISION);
-           captionCellDivision_Y =  Math.Round(pointOfDivision_Y * CELL_DIVISION, 1);
 
-        }
-
-        // Нарисовать клеточки
-        private void drawSnoodAndCaption()
-        {
-            try
-            {             
-                drawShood();
-                drawCaption();
-                drawString("Количество нажатий в общем", new Point(0,0));
-
-            } catch(System.NullReferenceException)
-            {
-                g = graphicBox.CreateGraphics();
-            }
-            
-        }
-
-        private void drawShood()
-        {
-            Pen pen = new Pen(Color.Green, 1);
-            for (int x = CELL_DIVISION * MODIFIER_INDENT_FOR_X; x < graphicBox.Size.Width; x += CELL_DIVISION)
-                g.DrawLine(pen, x, 0, x, graphicBox.Size.Height - CELL_DIVISION); // Вертикальные  линии
-
-            for (int y = graphicBox.Height; y > 0; y -= CELL_DIVISION)
-                g.DrawLine(pen, CELL_DIVISION * MODIFIER_INDENT_FOR_X,
-                    graphicBox.Height - y, graphicBox.Size.Width, graphicBox.Height - y); // Горизонтальные линии
-        }
-
-        private void drawString(string text, Point point)
-        {
-            StringFormat SF = StringFormat.GenericDefault;
-            SF.FormatFlags = StringFormatFlags.DirectionVertical;
-            GraphicsPath gPath = new GraphicsPath();
-            gPath.AddString(text,
-                FontFamily.GenericSerif,
-                0, // стиль
-                20, // размер
-                point,
-                SF);
-
-            g.DrawPath(new Pen(Brushes.Black), gPath);
-        }
-
-        private void drawCaption()
-        {
-            Font font = new Font(FontFamily.GenericSerif, 10);
-            double caption = 0;
-            for (int y = 0; y < graphicBox.Width; y += CELL_DIVISION)
-            { //
-                g.DrawString(caption.ToString(), font,
-                        Brushes.Black,
-                        new PointF(CELL_DIVISION, graphicBox.Height - y - CELL_DIVISION - (CELL_DIVISION / 2)));// вертикаль
-                caption += captionCellDivision_Y;
-            }
-
-            caption = 0;
-            for (int x = 0; x < graphicBox.Width; x += CELL_DIVISION)
-            {
-                g.DrawString(caption.ToString(),
-                        font, Brushes.Black,
-                        new PointF(x + CELL_DIVISION * MODIFIER_INDENT_FOR_X, graphicBox.Height - CELL_DIVISION));// горизонт       
-                caption += captionCellDivision_X;
-
-             }     
-        }
 
         private void drawGraphic (Session selectedSession)
         {
-            try
+           // try
             {
-                int x = CELL_DIVISION * MODIFIER_INDENT_FOR_X;
+                zGraph.IsShowPointValues = true;
+                List<double> listX = new List<double>();
+                List<double> listY = new List<double>();
 
-                List<Point> points = new List<Point>();
-
-                //int inc = 0;
-                //while (x < graphicBox.Width)
-                //{
-                //    if (inc == selectedSession.listTimeBlockClicks.Count) break;
-
-                //    points.Add(new Point (x , getPointY(selectedSession.listTimeBlockClicks[inc].countClicks)));
-                //    x += CELL_DIVISION;
-
-                //    int step = (int)Math.Round(pointOfDivision_X);
-                //    if (step >= 1) inc += step;
-                //    else inc++;
-
-                //}
-
-                
-
-                while ( x < graphicBox.Width)
-                {
-                    points.Add(new Point
-                        (x,
-                        getPointY(selectedSession.dictionaryTimeBlockClicks[x / CELL_DIVISION])));
-                    x += CELL_DIVISION;
-                }
-
-                //foreach (KeyValuePair<int, int> value in selectedSession.dictionaryTimeBlockClicks)
-                //{
-                   
-                //        points.Add(new Point(getPointX(x), getPointY(value.Value)));
-                //        x += pointOfDivision_X;
-                     
-                //}
-
-                for (int i = 1; i < points.Count; i++)
-                {
-                    g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
-                }
+                listX.Add(2); listX.Add(5); listX.Add(7);
+                listY.Add(4); listY.Add(10); listY.Add(14);
+               // foreach (KeyValuePair<int, int> keyValue  in selectedSession.dictionaryTimeBlockClicks)
+               // {
+               //     listX.Add(keyValue.Key);
+               //     listY.Add(keyValue.Value);
+              //  }
+                zGraph.GraphPane.AddCurve("line", listX.ToArray(), listY.ToArray(), Color.Red);
+                zGraph.AxisChange();
+                zGraph.Invalidate();             
              }
-            catch (NullReferenceException)
+           // catch (NullReferenceException)
              {
-                MessageBox.Show("Пользователи загружаются..");
+           //     MessageBox.Show("Пользователи загружаются..");
              }
-}
-        private int getPointX (double x)
-        {
-          //  x *= CELL_DIVISION;
-            if (x <= 1) return 1;
-            return (int) Math.Round(x);   
-        }
-
-        private int getPointY(int countClicks)
-        {
-            double realY = (int)Math.Round(countClicks / pointOfDivision_Y);
-            return (int)graphicBox.Height - CELL_DIVISION - (int)realY;
-        }
-
-        //private void drawGraphic(Session selectedSession)
-        //{
-        //    try {
-        //    int x = CELL_DIVISION*MODIFIER_INDENT_FOR_X + CELL_DIVISION /captionCellDivision_X;
-        //    List<Point> points = new List<Point>();
-
-        //    foreach (TimeBlockCliks timeBlock in selectedSession.listTimeBlockClicks)
-        //    {
-        //        points.Add(new Point(x,
-        //                graphicBox.Height - CELL_DIVISION - timeBlock.countClicks * (CELL_DIVISION / captionCellDivision_Y)));
-        //             x = ( CELL_DIVISION * timeBlock.secondStartSession / captionCellDivision_X ) + CELL_DIVISION*MODIFIER_INDENT_FOR_X ;
-
-
-        //    }
-        //    for (int i = 1; i < points.Count; i++)
-        //    {
-        //        g.DrawLine(new Pen(Color.Gray, 2), points[i - 1], points[i]);
-        //    }
-        //    } catch (NullReferenceException)
-        //    {
-        //        MessageBox.Show("Пользователи загружаются..");
-        //    }
-
-        //}
-
-
+         }
+    
 
         private void userComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -275,9 +172,8 @@ namespace Keyboard_semulator.Forms
             try {
            string dateString = dateListBox.GetItemText(dateListBox.SelectedItem);
             Session selectedSession = Session.searchSession(selectedUser, dateString);
-
-                updateGraphicsBox(selectedSession);
-
+            drawGraphic(selectedSession);   
+                         
             InfoListBox.Items.Clear();
             addInfo(dateString);
             addInfo(selectedSession.typeSession);
@@ -298,7 +194,7 @@ namespace Keyboard_semulator.Forms
         private void sessionTypeComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             uploadUserDateInfo();
-            updateGraphicsBox();
+            
         }
 
         private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
