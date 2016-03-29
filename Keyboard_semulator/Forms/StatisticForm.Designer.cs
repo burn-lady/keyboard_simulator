@@ -42,10 +42,10 @@
             this.userComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userComboBox.ForeColor = System.Drawing.Color.AntiqueWhite;
             this.userComboBox.FormattingEnabled = true;
-            this.userComboBox.Location = new System.Drawing.Point(41, 7);
+            this.userComboBox.Location = new System.Drawing.Point(15, 7);
             this.userComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userComboBox.Name = "userComboBox";
-            this.userComboBox.Size = new System.Drawing.Size(684, 25);
+            this.userComboBox.Size = new System.Drawing.Size(954, 25);
             this.userComboBox.TabIndex = 0;
             this.userComboBox.SelectedIndexChanged += new System.EventHandler(this.userComboBox_SelectedIndexChanged);
             this.userComboBox.SelectedValueChanged += new System.EventHandler(this.userComboBox_SelectedValueChanged);
@@ -60,7 +60,7 @@
             this.dateListBox.Location = new System.Drawing.Point(15, 89);
             this.dateListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateListBox.Name = "dateListBox";
-            this.dateListBox.Size = new System.Drawing.Size(220, 436);
+            this.dateListBox.Size = new System.Drawing.Size(220, 490);
             this.dateListBox.TabIndex = 1;
             this.dateListBox.SelectedValueChanged += new System.EventHandler(this.dateListBox_SelectedValueChanged);
             // 
@@ -85,10 +85,10 @@
             this.sessionTypeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sessionTypeComboBox.ForeColor = System.Drawing.Color.AntiqueWhite;
             this.sessionTypeComboBox.FormattingEnabled = true;
-            this.sessionTypeComboBox.Location = new System.Drawing.Point(41, 42);
+            this.sessionTypeComboBox.Location = new System.Drawing.Point(15, 42);
             this.sessionTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sessionTypeComboBox.Name = "sessionTypeComboBox";
-            this.sessionTypeComboBox.Size = new System.Drawing.Size(684, 26);
+            this.sessionTypeComboBox.Size = new System.Drawing.Size(954, 26);
             this.sessionTypeComboBox.TabIndex = 4;
             this.sessionTypeComboBox.SelectedValueChanged += new System.EventHandler(this.sessionTypeComboBox_SelectedValueChanged);
             // 

@@ -14,33 +14,18 @@ namespace Keyboard_semulator.Forms
 {
     public partial class StatisticForm : Form
     {
-        //деления,  для корректной отрисовки размеры GraphicsBox (Size) должны быть кратны этому числу
-        private static int CELL_DIVISION = 30;
-        int MODIFIER_INDENT_FOR_X = 2;
-
-        double captionCellDivision_X = 30;
-        double captionCellDivision_Y = 30;
-
-        double pointOfDivision_X;
-        double pointOfDivision_Y;
-
         List<User> listUsers;
         User selectedUser = null;
         Graphics g;
 
         private ZedGraph.ZedGraphControl zGraph;
 
-   
-
         public StatisticForm()
         {
             InitializeComponent();
             initZGraph();
             loadUsers();
-            initInterface();
-       
-           // g = graphicBox.CreateGraphics();
-          
+            initInterface();         
         }
 
         private void initZGraph()
@@ -49,15 +34,16 @@ namespace Keyboard_semulator.Forms
             zGraph = new ZedGraph.ZedGraphControl();
             this.SuspendLayout();
             this.zGraph.IsShowPointValues = false;
-            this.zGraph.Location = new System.Drawing.Point(200, 150);
+            this.zGraph.Location = new System.Drawing.Point(213, 150);
             this.zGraph.Name = "zGraph";
             this.zGraph.PointValueFormat = "G";
-            this.zGraph.Size = new System.Drawing.Size(500, 329);
+            this.zGraph.Size = new System.Drawing.Size(512, 329);
             this.zGraph.TabIndex = 0;
+            this.zGraph.GraphPane.XAxis.Title.Text = "Время сессии";
+            this.zGraph.GraphPane.YAxis.Title.Text = "Всего нажатий";
+            this.zGraph.GraphPane.Title.Text = "Успеваемость";            
 
-            this.Controls.Add(this.zGraph);
-            
-
+            this.Controls.Add(this.zGraph);            
         }
 
         private void initInterface()
@@ -71,7 +57,6 @@ namespace Keyboard_semulator.Forms
 
         private void StatisticForm_Load(object sender, EventArgs e)
         {
-           // drawGraphic();
         }
 
         private void loadUsers()
@@ -107,8 +92,7 @@ namespace Keyboard_semulator.Forms
         private void drawGraphic (Session selectedSession)
         {
             try
-            {
-                
+            {                
                 zGraph.IsShowPointValues = true;
                 List<double> listX = new List<double>();
                 List<double> listY = new List<double>();
@@ -118,10 +102,12 @@ namespace Keyboard_semulator.Forms
                     listX.Add(keyValue.Key);
                     listY.Add(keyValue.Value);
                 }
-                if (zGraph.GraphPane.CurveList.Count >0) zGraph.GraphPane.CurveList.RemoveAt(0);
-                zGraph.GraphPane.AddCurve("line", listX.ToArray(), listY.ToArray(), Color.Red);
+
+                zGraph.GraphPane.CurveList.Clear();
+                zGraph.GraphPane.AddCurve("Успеваемость", listX.ToArray(), listY.ToArray(), Color.Red);
                 zGraph.AxisChange();
-                zGraph.Invalidate();             
+                zGraph.Invalidate();  
+                           
              }
             catch (NullReferenceException)
              {
@@ -134,8 +120,6 @@ namespace Keyboard_semulator.Forms
         {
             selectedUser = User.searchUser(listUsers, userComboBox.Text);
             uploadUserDateInfo();
-           // drawGraphic();
-
         }
 
         private void addInfo(string line){ InfoListBox.Items.Add(line);}
@@ -167,8 +151,7 @@ namespace Keyboard_semulator.Forms
 
         private void sessionTypeComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            uploadUserDateInfo();
-            
+            uploadUserDateInfo();            
         }
 
         private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +162,6 @@ namespace Keyboard_semulator.Forms
         private void label1_Click(object sender, EventArgs e)
         {
     
-    }
+        }
 }
 }
