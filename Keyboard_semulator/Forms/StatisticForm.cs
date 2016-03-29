@@ -45,6 +45,7 @@ namespace Keyboard_semulator.Forms
 
         private void initZGraph()
         {
+            
             zGraph = new ZedGraph.ZedGraphControl();
             this.SuspendLayout();
             this.zGraph.IsShowPointValues = false;
@@ -55,35 +56,8 @@ namespace Keyboard_semulator.Forms
             this.zGraph.TabIndex = 0;
 
             this.Controls.Add(this.zGraph);
+            
 
-
-
-            /*
-             this.z1 = new ZedGraph.ZedGraphControl();
-        this.SuspendLayout();
-        // 
-        // z1
-        // 
-        this.z1.IsShowPointValues = false;
-        this.z1.Location = new System.Drawing.Point(0, 0);
-        this.z1.Name = "z1";
-        this.z1.PointValueFormat = "G";
-        this.z1.Size = new System.Drawing.Size(816, 478);
-        this.z1.TabIndex = 0;
-        // 
-        // Form1
-        // 
-        this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
-        this.ClientSize = new System.Drawing.Size(856, 512);
-        this.Controls.Add(this.z1);
-        this.Name = "Form1";
-        this.Text = "Form1";
-        this.Load += new System.EventHandler(this.Form1_Load);
-        this.ResumeLayout(false);
-
-    }
-
-*/
         }
 
         private void initInterface()
@@ -132,26 +106,26 @@ namespace Keyboard_semulator.Forms
 
         private void drawGraphic (Session selectedSession)
         {
-           // try
+            try
             {
+                
                 zGraph.IsShowPointValues = true;
                 List<double> listX = new List<double>();
                 List<double> listY = new List<double>();
 
-                listX.Add(2); listX.Add(5); listX.Add(7);
-                listY.Add(4); listY.Add(10); listY.Add(14);
-               // foreach (KeyValuePair<int, int> keyValue  in selectedSession.dictionaryTimeBlockClicks)
-               // {
-               //     listX.Add(keyValue.Key);
-               //     listY.Add(keyValue.Value);
-              //  }
+                foreach (KeyValuePair<int, int> keyValue in selectedSession.dictionaryTimeBlockClicks)
+                {
+                    listX.Add(keyValue.Key);
+                    listY.Add(keyValue.Value);
+                }
+                if (zGraph.GraphPane.CurveList.Count >0) zGraph.GraphPane.CurveList.RemoveAt(0);
                 zGraph.GraphPane.AddCurve("line", listX.ToArray(), listY.ToArray(), Color.Red);
                 zGraph.AxisChange();
                 zGraph.Invalidate();             
              }
-           // catch (NullReferenceException)
+            catch (NullReferenceException)
              {
-           //     MessageBox.Show("Пользователи загружаются..");
+                MessageBox.Show("Пользователи загружаются..");
              }
          }
     

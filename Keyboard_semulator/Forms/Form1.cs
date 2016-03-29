@@ -224,8 +224,11 @@ namespace Keyboard_semulator
 
         private void fixBlock()
         {
-            sessionTimeBlock = 0;          
-            dictionaryTimeBlocksClicks.Add(sessionTime, totalClicks);
+            sessionTimeBlock = 0;
+            if (dictionaryTimeBlocksClicks.ContainsKey(sessionTime))
+               dictionaryTimeBlocksClicks[sessionTime] = totalClicks;
+            else         
+               dictionaryTimeBlocksClicks.Add(sessionTime, totalClicks);
             
         }
 

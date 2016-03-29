@@ -33,7 +33,6 @@
             this.InfoListBox = new System.Windows.Forms.ListBox();
             this.sessionTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // userComboBox
@@ -106,26 +105,12 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.label2.Location = new System.Drawing.Point(536, 549);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 33);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Время сессии";
-            // 
             // StatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1001, 598);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sessionTypeComboBox);
             this.Controls.Add(this.InfoListBox);
@@ -147,6 +132,5 @@
         private System.Windows.Forms.ListBox InfoListBox;
         private System.Windows.Forms.ComboBox sessionTypeComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
