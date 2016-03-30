@@ -181,7 +181,7 @@ namespace Keyboard_semulator
             saveResult();
             fixBlock();
           //  MessageBox.Show("Вы закончили упражнение! \n" + DateTime.Now.ToString());
-            new InfoForm(userName + " , Поздравляем! Вы закончили упражнение!  \n"+"               "+ DateTime.Now.ToString()).ShowDialog();
+            new InfoForm( userName + " , Поздравляем! Вы закончили упражнение!  \n" + "               "+ DateTime.Now.ToString()).ShowDialog();
         }
 
         private void saveResult()
