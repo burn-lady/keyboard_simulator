@@ -101,7 +101,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Static\MyTextReader.cs" />
+    <Compile Include="Static\TextReader.cs" />
     <Compile Include="Static\Serializer.cs" />
     <EmbeddedResource Include="Forms\TutorialProgramForm.resx">
       <DependentUpon>TutorialProgramForm.cs</DependentUpon>

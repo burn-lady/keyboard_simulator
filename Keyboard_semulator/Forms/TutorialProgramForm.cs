@@ -15,17 +15,36 @@ namespace Keyboard_semulator.Forms
         public TutorialProgramForm()
         {
             InitializeComponent();
-            //this.Width = System.D
+            adaptSizeFormAndTextBox();
+        }
 
+        private void adaptSizeFormAndTextBox()
+        {
+            this.Width = SystemInformation.PrimaryMonitorSize.Width;
+            this.Height = SystemInformation.PrimaryMonitorSize.Height - 50;
+            this.tutorialTextBox.Height = SystemInformation.PrimaryMonitorSize.Height - 100;
+            this.tutorialTextBox.Width = SystemInformation.PrimaryMonitorSize.Width - 50;
         }
 
         private void AboutProgramForm_Load(object sender, EventArgs e)
         {
-            StringBuilder SB = new StringBuilder();
-            List<string> lines = MyTextReader.read(MyTextReader.TUTORIAL_PROGRAM_FILE);
-            foreach (string line in lines) SB.Append(line + "\n\r");
+            loadTextForTextBox();
+        }
 
-            tutorialTextBox.Text = SB.ToString();
+        private void loadTextForTextBox()
+        {
+            try
+            {
+                StringBuilder SB = new StringBuilder();
+                List<string> lines = MyTextReader.read(MyTextReader.TUTORIAL_PROGRAM_FILE);
+                foreach (string line in lines) SB.Append(line + "\n\r");
+
+                tutorialTextBox.Text = SB.ToString();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Отсутствует файл с туториалом");
+            }
         }
 
 
