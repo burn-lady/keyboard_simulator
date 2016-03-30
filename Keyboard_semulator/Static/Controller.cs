@@ -8,7 +8,6 @@ namespace Keyboard_semulator
 {
     class Controller
     {
-
         public static string generateTask_Words (List<string> lines, int maxWords)
         {
             int number;

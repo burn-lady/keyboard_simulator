@@ -165,20 +165,12 @@ namespace Keyboard_semulator
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            /*
-            if (task[step] == e.KeyChar) hitClickEvent();
-            else errorCLickEvent(); */
-        
+        {       
         }
 
         
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            /*
-            if (task[step].ToString() == e.KeyValue.ToString()) hitClickEvent();
-            else errorCLickEvent();
-            listBoxTextFile.Items.Add(e.KeyValue.ToString()); */
         } 
 
         private void finishSession()

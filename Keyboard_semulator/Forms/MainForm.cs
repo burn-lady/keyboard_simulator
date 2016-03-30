@@ -19,7 +19,6 @@ namespace Keyboard_semulator
         public MainForm()
         {
             InitializeComponent();            
-          //  loadUsers();
         }
 
         private void loadUsers()
@@ -31,7 +30,8 @@ namespace Keyboard_semulator
         }
 
         private void newGameButton_Click(object sender, EventArgs e)
-        {   if (UsersBox.Text != "")
+        {
+            if (UsersBox.Text != "")
                 new Form1(
                      UsersBox.Text
                     ).ShowDialog();
@@ -67,7 +67,6 @@ namespace Keyboard_semulator
         private void tutorialProgramButton_Click(object sender, EventArgs e)
         {
             new TutorialProgramForm().ShowDialog();
-
         }
     }
 }

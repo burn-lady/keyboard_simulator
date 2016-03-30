@@ -80,9 +80,6 @@ namespace Keyboard_semulator.Forms
             return Math.Log(T_selectSessionTime / A_first) / t_allTime;
         }
 
-
-
-
         private void drawGraphic (Session selectedSession)
         {
             try
@@ -109,7 +106,6 @@ namespace Keyboard_semulator.Forms
              }
          }
     
-
         private void userComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             selectedUser = User.searchUser(listUsers, userComboBox.Text);

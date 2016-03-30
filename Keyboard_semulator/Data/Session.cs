@@ -23,7 +23,6 @@ namespace Keyboard_semulator.Data
         public int totalWords;
 
         public Dictionary<char, int> errorLetters;
-        //   public List<TimeBlockCliks> listTimeBlockClicks;
        
         public Dictionary<int, int> dictionaryTimeBlockClicks;
 
@@ -49,11 +48,6 @@ namespace Keyboard_semulator.Data
             this.dictionaryTimeBlockClicks = dictionaryTimeBlockClicks;
         }
 
-      /*  public void addErrorLetter(char letter)
-        {
-            if (errorLetters.ContainsKey(letter)) errorLetters[letter]++;
-            else errorLetters.Add(letter, 1);
-        } */
  
         public string[] getArrayStringErrorLetters ()
         {

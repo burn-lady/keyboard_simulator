@@ -16,13 +16,6 @@ namespace Keyboard_semulator
         public static string CONTROL_LETTERS = "control_letters.txt";
         public static string TUTORIAL_PROGRAM_FILE = "Tutorial_Program.txt";
 
-        //public static List<string> read(string appPatch, string fileName)
-        //{
-        //    List<string> listText = new List<string>();
-        //    listText.AddRange(File.ReadAllLines(appPatch + "//" + fileName, Encoding.Default));
-        //    return listText;
-        //}
-
         public static List<string> read (string path)
         {
             try {
@@ -35,12 +28,5 @@ namespace Keyboard_semulator
             }
             
         }
-
-        //public string readTextFile(string appPatch, string fileName);
-        //{
-        //  //  List<string> listText = File.ReadLines();
-        //    return " ";
-        //}
-
     }
 }
