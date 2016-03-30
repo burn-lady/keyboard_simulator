@@ -23,27 +23,27 @@ namespace Keyboard_semulator.Forms
         public StatisticForm()
         {
             InitializeComponent();
-            initZGraph();
+            createZGraph();
             loadUsers();
             initInterface();         
         }
 
-        private void initZGraph()
+        private void createZGraph()
         {
             
             zGraph = new ZedGraph.ZedGraphControl();
             this.SuspendLayout();
             this.zGraph.IsShowPointValues = false;
-            this.zGraph.Location = new System.Drawing.Point(213, 150);
+            this.zGraph.Location = new System.Drawing.Point(213, 150);// верх лев точка
             this.zGraph.Name = "zGraph";
             this.zGraph.PointValueFormat = "G";
-            this.zGraph.Size = new System.Drawing.Size(512, 329);
+            this.zGraph.Size = new System.Drawing.Size(512, 329);// размер окна графика 
             this.zGraph.TabIndex = 0;
             this.zGraph.GraphPane.XAxis.Title.Text = "Время сессии";
             this.zGraph.GraphPane.YAxis.Title.Text = "Всего нажатий";
             this.zGraph.GraphPane.Title.Text = "Успеваемость";            
 
-            this.Controls.Add(this.zGraph);            
+            this.Controls.Add(this.zGraph);    //ВПИСЫВАЕМ ГРАФ В ФОРМУ        
         }
 
         private void initInterface()
@@ -81,19 +81,13 @@ namespace Keyboard_semulator.Forms
         }
 
 
-        private void updateGraphicsBox(Session selectedSession)
-        {
-            g.Clear(Color.White);
-            drawGraphic(selectedSession);
-        }
-
 
 
         private void drawGraphic (Session selectedSession)
         {
             try
             {                
-                zGraph.IsShowPointValues = true;
+                zGraph.IsShowPointValues = true;// ПОКАЗ ЗНАЧЕНИЙ ТОЧЕК
                 List<double> listX = new List<double>();
                 List<double> listY = new List<double>();
 
@@ -106,7 +100,7 @@ namespace Keyboard_semulator.Forms
                 zGraph.GraphPane.CurveList.Clear();
                 zGraph.GraphPane.AddCurve("Успеваемость", listX.ToArray(), listY.ToArray(), Color.Red);
                 zGraph.AxisChange();
-                zGraph.Invalidate();  
+                zGraph.Invalidate();  // ПЕРЕРИСОВЫВАЕТ
                            
              }
             catch (NullReferenceException)

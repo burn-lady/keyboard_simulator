@@ -63,5 +63,11 @@ namespace Keyboard_semulator
         {
 
         }
+
+        private void tutorialProgramButton_Click(object sender, EventArgs e)
+        {
+            new TutorialProgramForm().ShowDialog();
+
+        }
     }
 }

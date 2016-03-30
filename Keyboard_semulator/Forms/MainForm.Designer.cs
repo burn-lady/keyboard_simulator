@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.newGameButton = new System.Windows.Forms.Button();
-            this.settingsButton = new System.Windows.Forms.Button();
+            this.tutorialProgramButton = new System.Windows.Forms.Button();
             this.statisticsButton = new System.Windows.Forms.Button();
             this.UsersBox = new System.Windows.Forms.ComboBox();
             this.usersButton = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.newGameButton.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newGameButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.newGameButton.Location = new System.Drawing.Point(74, 15);
-            this.newGameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newGameButton.Margin = new System.Windows.Forms.Padding(2);
             this.newGameButton.Name = "newGameButton";
             this.newGameButton.Size = new System.Drawing.Size(271, 43);
             this.newGameButton.TabIndex = 0;
@@ -53,18 +53,19 @@
             this.newGameButton.UseVisualStyleBackColor = false;
             this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
-            // settingsButton
+            // tutorialProgramButton
             // 
-            this.settingsButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsButton.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsButton.Location = new System.Drawing.Point(660, 411);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(177, 45);
-            this.settingsButton.TabIndex = 1;
-            this.settingsButton.Text = "Справка";
-            this.settingsButton.UseVisualStyleBackColor = false;
+            this.tutorialProgramButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.tutorialProgramButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tutorialProgramButton.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tutorialProgramButton.Location = new System.Drawing.Point(660, 411);
+            this.tutorialProgramButton.Margin = new System.Windows.Forms.Padding(2);
+            this.tutorialProgramButton.Name = "tutorialProgramButton";
+            this.tutorialProgramButton.Size = new System.Drawing.Size(177, 45);
+            this.tutorialProgramButton.TabIndex = 1;
+            this.tutorialProgramButton.Text = "Справка";
+            this.tutorialProgramButton.UseVisualStyleBackColor = false;
+            this.tutorialProgramButton.Click += new System.EventHandler(this.tutorialProgramButton_Click);
             // 
             // statisticsButton
             // 
@@ -73,7 +74,7 @@
             this.statisticsButton.Font = new System.Drawing.Font("Ravie", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statisticsButton.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.statisticsButton.Location = new System.Drawing.Point(74, 300);
-            this.statisticsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.statisticsButton.Name = "statisticsButton";
             this.statisticsButton.Size = new System.Drawing.Size(271, 136);
             this.statisticsButton.TabIndex = 2;
@@ -89,7 +90,7 @@
             this.UsersBox.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.UsersBox.FormattingEnabled = true;
             this.UsersBox.Location = new System.Drawing.Point(74, 61);
-            this.UsersBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UsersBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsersBox.Name = "UsersBox";
             this.UsersBox.Size = new System.Drawing.Size(272, 21);
             this.UsersBox.Sorted = true;
@@ -104,7 +105,7 @@
             this.usersButton.Font = new System.Drawing.Font("Snap ITC", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usersButton.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.usersButton.Location = new System.Drawing.Point(74, 111);
-            this.usersButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usersButton.Margin = new System.Windows.Forms.Padding(2);
             this.usersButton.Name = "usersButton";
             this.usersButton.Size = new System.Drawing.Size(271, 129);
             this.usersButton.TabIndex = 4;
@@ -120,7 +121,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(417, 37);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(354, 353);
             this.pictureBox2.TabIndex = 6;
@@ -136,9 +137,9 @@
             this.Controls.Add(this.usersButton);
             this.Controls.Add(this.UsersBox);
             this.Controls.Add(this.statisticsButton);
-            this.Controls.Add(this.settingsButton);
+            this.Controls.Add(this.tutorialProgramButton);
             this.Controls.Add(this.newGameButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Адаптивный клавиатурный тренажер";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -150,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.Button newGameButton;
-        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button tutorialProgramButton;
         private System.Windows.Forms.Button statisticsButton;
         private System.Windows.Forms.ComboBox UsersBox;
         private System.Windows.Forms.Button usersButton;

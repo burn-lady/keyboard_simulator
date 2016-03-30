@@ -14,6 +14,7 @@ namespace Keyboard_semulator
         public static string CONTROL_WORDS = "words_text_file.txt";
         public static string CONTROL_TEXT = "control_text.txt";
         public static string CONTROL_LETTERS = "control_letters.txt";
+        public static string TUTORIAL_PROGRAM_FILE = "Tutorial_Program.txt";
 
         //public static List<string> read(string appPatch, string fileName)
         //{
