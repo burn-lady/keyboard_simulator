@@ -47,6 +47,9 @@ namespace Keyboard_semulator.Forms
             }
         }
 
+        private void tutorialTextBox_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
