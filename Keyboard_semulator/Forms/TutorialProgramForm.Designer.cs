@@ -34,12 +34,15 @@
             // 
             // tutorialTextBox
             // 
-            this.tutorialTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tutorialTextBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.tutorialTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tutorialTextBox.Font = new System.Drawing.Font("Ravie", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tutorialTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.tutorialTextBox.Location = new System.Drawing.Point(12, 12);
             this.tutorialTextBox.Multiline = true;
             this.tutorialTextBox.Name = "tutorialTextBox";
             this.tutorialTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tutorialTextBox.Size = new System.Drawing.Size(570, 317);
+            this.tutorialTextBox.Size = new System.Drawing.Size(573, 304);
             this.tutorialTextBox.TabIndex = 0;
             this.tutorialTextBox.TextChanged += new System.EventHandler(this.tutorialTextBox_TextChanged);
             // 
@@ -48,8 +51,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(669, 475);
+            this.ClientSize = new System.Drawing.Size(597, 336);
             this.Controls.Add(this.tutorialTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TutorialProgramForm";
             this.Text = "Справка";
             this.Load += new System.EventHandler(this.AboutProgramForm_Load);

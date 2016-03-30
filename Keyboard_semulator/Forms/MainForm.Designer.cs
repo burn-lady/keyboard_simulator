@@ -139,6 +139,7 @@
             this.Controls.Add(this.statisticsButton);
             this.Controls.Add(this.tutorialProgramButton);
             this.Controls.Add(this.newGameButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Адаптивный клавиатурный тренажер";

@@ -64,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(625, 350);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfoForm";
             this.Text = "Задание выполнено!";
             this.Load += new System.EventHandler(this.InfoForm_Load);

@@ -51,9 +51,10 @@
             this.taskLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.taskLabel.Font = new System.Drawing.Font("Ravie", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.taskLabel.Location = new System.Drawing.Point(1, 23);
+            this.taskLabel.Location = new System.Drawing.Point(1, 19);
+            this.taskLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.taskLabel.Name = "taskLabel";
-            this.taskLabel.Size = new System.Drawing.Size(1139, 50);
+            this.taskLabel.Size = new System.Drawing.Size(921, 39);
             this.taskLabel.TabIndex = 0;
             this.taskLabel.Text = "Задание                                                           ";
             this.taskLabel.Click += new System.EventHandler(this.taskLabel_Click);
@@ -65,9 +66,10 @@
             this.totalClickLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalClickLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalClickLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.totalClickLabel.Location = new System.Drawing.Point(332, 198);
+            this.totalClickLabel.Location = new System.Drawing.Point(249, 161);
+            this.totalClickLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totalClickLabel.Name = "totalClickLabel";
-            this.totalClickLabel.Size = new System.Drawing.Size(39, 41);
+            this.totalClickLabel.Size = new System.Drawing.Size(32, 33);
             this.totalClickLabel.TabIndex = 1;
             this.totalClickLabel.Text = "0";
             this.totalClickLabel.Click += new System.EventHandler(this.totalClickLabel_Click);
@@ -79,11 +81,11 @@
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startButton.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.startButton.Location = new System.Drawing.Point(397, 255);
-            this.startButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.startButton.Location = new System.Drawing.Point(298, 207);
+            this.startButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.startButton.Name = "startButton";
             this.startButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.startButton.Size = new System.Drawing.Size(255, 103);
+            this.startButton.Size = new System.Drawing.Size(191, 84);
             this.startButton.TabIndex = 3;
             this.startButton.Text = "Начать";
             this.startButton.UseVisualStyleBackColor = false;
@@ -93,10 +95,10 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.SteelBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(51, 235);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(38, 191);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(47, 15);
+            this.textBox1.Size = new System.Drawing.Size(35, 13);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -106,9 +108,10 @@
             this.userTextLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userTextLabel.Font = new System.Drawing.Font("Snap ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.userTextLabel.Location = new System.Drawing.Point(12, 480);
+            this.userTextLabel.Location = new System.Drawing.Point(9, 390);
+            this.userTextLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userTextLabel.Name = "userTextLabel";
-            this.userTextLabel.Size = new System.Drawing.Size(216, 33);
+            this.userTextLabel.Size = new System.Drawing.Size(173, 27);
             this.userTextLabel.TabIndex = 6;
             this.userTextLabel.Text = "Пользователь :";
             // 
@@ -123,9 +126,10 @@
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeLabel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.timeLabel.Location = new System.Drawing.Point(87, 448);
+            this.timeLabel.Location = new System.Drawing.Point(65, 364);
+            this.timeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(148, 31);
+            this.timeLabel.Size = new System.Drawing.Size(117, 26);
             this.timeLabel.TabIndex = 7;
             this.timeLabel.Text = "Время (с) :";
             // 
@@ -135,10 +139,10 @@
             this.wordsRadioButton.BackColor = System.Drawing.Color.SkyBlue;
             this.wordsRadioButton.Checked = true;
             this.wordsRadioButton.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordsRadioButton.Location = new System.Drawing.Point(468, 378);
-            this.wordsRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.wordsRadioButton.Location = new System.Drawing.Point(351, 307);
+            this.wordsRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wordsRadioButton.Name = "wordsRadioButton";
-            this.wordsRadioButton.Size = new System.Drawing.Size(101, 31);
+            this.wordsRadioButton.Size = new System.Drawing.Size(90, 26);
             this.wordsRadioButton.TabIndex = 8;
             this.wordsRadioButton.TabStop = true;
             this.wordsRadioButton.Text = "СлОвА";
@@ -151,10 +155,10 @@
             this.textRadioButton.BackColor = System.Drawing.Color.SkyBlue;
             this.textRadioButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textRadioButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.textRadioButton.Location = new System.Drawing.Point(725, 297);
-            this.textRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textRadioButton.Location = new System.Drawing.Point(544, 241);
+            this.textRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textRadioButton.Name = "textRadioButton";
-            this.textRadioButton.Size = new System.Drawing.Size(302, 39);
+            this.textRadioButton.Size = new System.Drawing.Size(246, 32);
             this.textRadioButton.TabIndex = 9;
             this.textRadioButton.TabStop = true;
             this.textRadioButton.Text = "КОНТРОЛЬНЫЙ ТЕКСТ";
@@ -166,10 +170,9 @@
             this.lettersRadioButton.AutoSize = true;
             this.lettersRadioButton.BackColor = System.Drawing.Color.SkyBlue;
             this.lettersRadioButton.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lettersRadioButton.Location = new System.Drawing.Point(16, 297);
-            this.lettersRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lettersRadioButton.Location = new System.Drawing.Point(12, 241);
             this.lettersRadioButton.Name = "lettersRadioButton";
-            this.lettersRadioButton.Size = new System.Drawing.Size(267, 39);
+            this.lettersRadioButton.Size = new System.Drawing.Size(216, 32);
             this.lettersRadioButton.TabIndex = 10;
             this.lettersRadioButton.TabStop = true;
             this.lettersRadioButton.Text = "БУКВЫ и СИМВОЛЫ";
@@ -180,19 +183,18 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.LightBlue;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 86);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 70);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1072, 479);
+            this.pictureBox1.Size = new System.Drawing.Size(804, 389);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1072, 565);
+            this.ClientSize = new System.Drawing.Size(804, 459);
             this.Controls.Add(this.lettersRadioButton);
             this.Controls.Add(this.textRadioButton);
             this.Controls.Add(this.wordsRadioButton);
@@ -203,7 +205,8 @@
             this.Controls.Add(this.totalClickLabel);
             this.Controls.Add(this.taskLabel);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Задания";
             this.Load += new System.EventHandler(this.Form1_Load);

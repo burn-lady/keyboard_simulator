@@ -44,7 +44,7 @@
             this.userComboBox.ForeColor = System.Drawing.Color.AntiqueWhite;
             this.userComboBox.FormattingEnabled = true;
             this.userComboBox.Location = new System.Drawing.Point(11, 6);
-            this.userComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.userComboBox.Name = "userComboBox";
             this.userComboBox.Size = new System.Drawing.Size(716, 21);
             this.userComboBox.TabIndex = 0;
@@ -59,7 +59,7 @@
             this.dateListBox.FormattingEnabled = true;
             this.dateListBox.ItemHeight = 15;
             this.dateListBox.Location = new System.Drawing.Point(11, 72);
-            this.dateListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateListBox.Margin = new System.Windows.Forms.Padding(2);
             this.dateListBox.Name = "dateListBox";
             this.dateListBox.Size = new System.Drawing.Size(166, 394);
             this.dateListBox.TabIndex = 1;
@@ -74,7 +74,7 @@
             this.InfoListBox.FormattingEnabled = true;
             this.InfoListBox.ItemHeight = 15;
             this.InfoListBox.Location = new System.Drawing.Point(216, 72);
-            this.InfoListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InfoListBox.Margin = new System.Windows.Forms.Padding(2);
             this.InfoListBox.Name = "InfoListBox";
             this.InfoListBox.Size = new System.Drawing.Size(512, 64);
             this.InfoListBox.TabIndex = 2;
@@ -87,7 +87,7 @@
             this.sessionTypeComboBox.ForeColor = System.Drawing.Color.AntiqueWhite;
             this.sessionTypeComboBox.FormattingEnabled = true;
             this.sessionTypeComboBox.Location = new System.Drawing.Point(11, 34);
-            this.sessionTypeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sessionTypeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.sessionTypeComboBox.Name = "sessionTypeComboBox";
             this.sessionTypeComboBox.Size = new System.Drawing.Size(716, 23);
             this.sessionTypeComboBox.TabIndex = 4;
@@ -119,7 +119,8 @@
             this.Controls.Add(this.InfoListBox);
             this.Controls.Add(this.dateListBox);
             this.Controls.Add(this.userComboBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StatisticForm";
             this.Text = "Статистика ";
             this.Load += new System.EventHandler(this.StatisticForm_Load);
