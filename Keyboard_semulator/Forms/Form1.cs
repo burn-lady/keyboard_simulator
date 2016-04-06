@@ -176,6 +176,7 @@ namespace Keyboard_semulator
         private void finishSession()
         {
              run = false;
+            taskLabel.Text = "";
             simulationTimer.Enabled = false;
             textBox1.Clear();
             saveResult();
@@ -230,7 +231,9 @@ namespace Keyboard_semulator
             sessionTimeBlock++;
             timeLabel.Text = "Время (сек.): " + sessionTime ;
             if(Constanta.TIME_BLOCK_SECOND == sessionTimeBlock) fixBlock();
-                           
+            if (step > task.Length - 2) finishSession();
+
+
         }
 
         private void totalClickLabel_Click(object sender, EventArgs e)

@@ -27,3 +27,32 @@ D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semul
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.csproj.GenerateResource.Cache
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.exe
 D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.pdb
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\Keyboard_semulator.exe.config
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\Keyboard_semulator.exe
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\Keyboard_semulator.pdb
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\ZedGraph.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\ZedGraph.xml
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\de\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\es\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\fr\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\hu\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\it\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\ja\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\pt\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\ru\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\sk\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\sv\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\tr\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\zh-cn\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\zh-tw\ZedGraph.resources.dll
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.csprojResolveAssemblyReference.cache
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.TutorialProgramForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Form1.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.InfoForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.MainForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.StatisticForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.UsersForm.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Properties.Resources.resources
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.csproj.GenerateResource.Cache
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.exe
+D:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.pdb
