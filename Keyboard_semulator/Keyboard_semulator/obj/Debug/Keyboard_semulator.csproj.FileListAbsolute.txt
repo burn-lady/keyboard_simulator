@@ -1,1 +1,2 @@
 D:\Cloud-Mail.ru\Dropbox\MyProgram\C#\Desktop\Keyboard_semulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe.config
+D:\Универ\клав\Клав тренаж\keyboard_simulator\Keyboard_semulator\Keyboard_semulator\bin\Debug\Keyboard_semulator.exe.config

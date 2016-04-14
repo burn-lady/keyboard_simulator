@@ -43,7 +43,7 @@ namespace Keyboard_semulator.Forms
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Отсутствует файл с туториалом");
+                MessageBox.Show("Отсутствует файл со справкой");
             }
         }
 
