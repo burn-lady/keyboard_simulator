@@ -62,7 +62,7 @@ namespace Keyboard_semulator
         private void createComponents()
         {
             taskLabel.Font = new Font("Arial", 27, FontStyle.Italic);
-            simulationTimer.Interval = Constanta.TIME_BLOCK_MINISECOND;
+            simulationTimer.Interval = Global.TIME_BLOCK_MINISECOND;
         }
 
         public void addErrorLetter(char letter)
@@ -77,6 +77,7 @@ namespace Keyboard_semulator
             simulationTimer.Enabled = true;                    
             rangeOfTask();   
             taskLabel.Text = Controller.visibleLine(task, 0); //step = 0
+            Global.MAX_TIME_OF_SESSION = (int)numericUpDown1.Value*1000;
             textBox1.Focus();                       
         }
 
@@ -231,16 +232,16 @@ namespace Keyboard_semulator
 
         private void simulationTimer_Tick(object sender, EventArgs e)
         {
-            sessionTime += Constanta.TIME_BLOCK_MINISECOND;
-            sessionTimeBlock += Constanta.TIME_BLOCK_MINISECOND;
-            timeLabel.Text = "Время (минисек.): " + sessionTime ;          
+            sessionTime += Global.TIME_BLOCK_MINISECOND;
+            sessionTimeBlock += Global.TIME_BLOCK_MINISECOND;
+            timeLabel.Text = "Время (сек.): " + Convert.ToString(sessionTime/1000 );          
             if (lettersRadioButton.Checked)
             {
-                if (Constanta.MAX_TIME_OF_SESSION < sessionTime) finishSession();
+                if (Global.MAX_TIME_OF_SESSION < sessionTime) finishSession();
             }
             else
             {
-                if (Constanta.TIME_BLOCK_MINISECOND == sessionTimeBlock) fixBlock();
+                if (Global.TIME_BLOCK_MINISECOND == sessionTimeBlock) fixBlock();
                 if (step > task.Length - 2) finishSession();
             }
         }

@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\LettersController.cs" />
-    <Compile Include="Data\Constanta.cs" />
+    <Compile Include="Data\Global.cs" />
     <Compile Include="Data\TimeBlockCliks.cs" />
     <Compile Include="Forms\TutorialProgramForm.cs">
       <SubType>Form</SubType>
