@@ -127,7 +127,7 @@ namespace Keyboard_semulator.Forms
             addInfo(dateString);
             addInfo(selectedSession.typeSession);
             addInfo("");
-            addInfo("Время сессии (сек): " + selectedSession.sessionTime);
+            addInfo("Время сессии (сек): " + Convert.ToString (selectedSession.sessionTime/ 1000) );
             addInfo("Колличество ошибок: " + selectedSession.errorClicks);
             addInfo("Всего нажатий: " + selectedSession.totalClicks);
             addInfo("Всего слов: " + selectedSession.totalWords);

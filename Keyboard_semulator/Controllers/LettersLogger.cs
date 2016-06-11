@@ -21,7 +21,7 @@ namespace Keyboard_semulator.Controllers
             Directory.CreateDirectory(DIR_LOG + "/" + username);
             pathToLog =  DIR_LOG + "/" + username + "/" + username + "-" + DateTime.Now.DayOfYear  + "-" + DateTime.Now.Hour + "-" + DateTime.Now.Minute + ".txt";
             File.AppendAllLines(pathToLog, new string[] {
-                "Упражнение выполнил " + username,
+                "Упражнение выполнил(а) " + username,
                 "Дата " + DateTime.Now,
                 " "
             });

@@ -27,6 +27,7 @@ namespace Keyboard_semulator
         bool run;
         bool unlockTextBox; // костыль
         string userName;
+        User selectedUser;
         string sessionType;
 
         public Dictionary<char, int> errorLetters;
@@ -38,6 +39,17 @@ namespace Keyboard_semulator
             createComponents();
             createVariables();
             this.userName = userName;
+            userTextLabel.Text = "Текущий пользователь: " + userName;
+            run = false;
+        }
+
+        public Form1(User user)
+        {
+            this.selectedUser = user;
+            userName = user.name;
+            InitializeComponent();
+            createComponents();
+            createVariables();
             userTextLabel.Text = "Текущий пользователь: " + userName;
             run = false;
         }
@@ -110,7 +122,8 @@ namespace Keyboard_semulator
             if (lettersRadioButton.Checked)
             {
                 LettersController.init();
-                task = LettersController.getLine();
+                LettersController.statisticLetters = selectedUser.statisticLetters;
+                task = LettersController.getRandomLine();
                 //task = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
                 taskLabel.Text = task;
                 sessionType = Session.CONTROL_LETTERS_SESSION;
@@ -139,6 +152,7 @@ namespace Keyboard_semulator
             if (user.A_first == 0) user.A_first = sessionTime; 
             user.listSessions.Add(new Session
                 (sessionType ,totalClicks, errorClicks, sessionTime, maxWords, errorLetters, dictionaryTimeBlocksClicks));
+            user.statisticLetters = LettersController.statisticLetters;
             listUsers.Add(user);
             Serializer.writeObject(Serializer.FILE_USERS, listUsers);
         }

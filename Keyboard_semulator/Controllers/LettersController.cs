@@ -11,17 +11,18 @@ namespace Keyboard_semulator.Controllers
     public class LettersController
     {
         public static int DEFAULT_MINISECOND_OF_LETTERS = 10000;
+        public static int LINE_LENGHT = 30;
         public static List<char> letters = new List<char>();
         public static Dictionary<char, int> statisticLetters = new Dictionary<char, int>();
-        private static char lastLetter = 'a';
 
         private static StringBuilder line = new StringBuilder();
         
+      
 
         public static string getLine()
         {
             line.Remove(0, 1);
-            if (line.Length < 20)
+            if (line.Length < LINE_LENGHT)
             {
                 char[] mLetters = getLettersHasMaxMiniseconds();
                 line.Append(mLetters[0]);
@@ -35,8 +36,8 @@ namespace Keyboard_semulator.Controllers
         {
             int maxMiniseconds = 0;
             char[] choiseLetters = new char[4];
-            choiseLetters[0] = letters[0];
-            choiseLetters[1] = letters[1];
+            Random r = new Random();
+            for (int i = 0; i < choiseLetters.Length; i++) choiseLetters[i] = letters[r.Next(letters.Count)]; 
             foreach (KeyValuePair<char, int> keyValue in statisticLetters)
             {
                 if (keyValue.Value > maxMiniseconds)
@@ -44,6 +45,9 @@ namespace Keyboard_semulator.Controllers
                     maxMiniseconds = keyValue.Value;
                     //for (int i = 1; i < choiseLetters.Length - 2; i++)
                     //    choiseLetters[i] = choiseLetters[i - 1];
+
+                    // Мой маленький китай     
+                    choiseLetters[3] = choiseLetters[2];
                     choiseLetters[2] = choiseLetters[1];
                     choiseLetters[1] = choiseLetters[0];
                     choiseLetters[0] = keyValue.Key;
@@ -60,19 +64,23 @@ namespace Keyboard_semulator.Controllers
             LettersLogger.writeLog(letter, sValue);
         }
 
-        public static void init()
+        public static string init()
         {        
             initLeters();
             initStatisticLetters();
+            return getRandomLine();           
+        }
+
+        public static string getRandomLine()
+        {
             Random r = new Random();
-            for (int i =0; i < letters.Count * 2; i++)
+            for (int i = 0; i < letters.Count; i++)
             {
                 line.Append(letters[r.Next(letters.Count)]);
             }
-            //foreach (char letter in letters)
-            //    line.Append(letter);
+            return line.ToString();
         }
-                       
+
         public static void initLeters()
         {
             List<string> lines = MyTextReader.read(MyTextReader.LETTERS);
