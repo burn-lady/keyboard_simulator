@@ -76,7 +76,6 @@ E:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\sv\ZedGraph.resourc
 E:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\tr\ZedGraph.resources.dll
 E:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\zh-cn\ZedGraph.resources.dll
 E:\git-dev\keyboard_simulator\Keyboard_semulator\bin\Release\zh-tw\ZedGraph.resources.dll
-E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.csprojResolveAssemblyReference.cache
 E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.TutorialProgramForm.resources
 E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Form1.resources
 E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.InfoForm.resources

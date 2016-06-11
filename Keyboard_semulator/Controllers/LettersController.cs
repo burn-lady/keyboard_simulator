@@ -13,11 +13,20 @@ namespace Keyboard_semulator.Controllers
         public static List<char> letters = new List<char>();
         public static Dictionary<char, int> statisticLetters = new Dictionary<char, int>();
         private static char lastLetter = 'a';
-                   
+
+        private static StringBuilder line = new StringBuilder();
+
+        public static string getLine()
+        {
+            line.Remove(0, 1);
+            line.Append(getLetterHasMaxMiniseconds());
+            return line.ToString();
+        }
+               
         public static char getLetterHasMaxMiniseconds()
         {
             int maxMiniseconds = 0;
-            char choiseLetter = 'e';
+            char choiseLetter = letters[0];
             foreach (KeyValuePair<char, int> keyValue in statisticLetters)
             {
                 if (keyValue.Value > maxMiniseconds)
@@ -26,6 +35,8 @@ namespace Keyboard_semulator.Controllers
                     choiseLetter = keyValue.Key;
                 }
             }
+            //return choiseLetter;
+
             if (lastLetter != choiseLetter)
             {
                 lastLetter = choiseLetter;
@@ -43,15 +54,18 @@ namespace Keyboard_semulator.Controllers
             statisticLetters[letter] = (oldValue + newValue) / 2;
         }
 
-        public static void initLettersAndStatistic()
-        {
+        public static void init()
+        {        
             initLeters();
             initStatisticLetters();
+            foreach (char letter in letters)
+                line.Append(letter);
         }
                        
         public static void initLeters()
         {
             List<string> lines = MyTextReader.read(MyTextReader.LETTERS);
+            letters = new List<char>();
             foreach (string line in lines)           
                letters.Add(line[0]);           
         } 

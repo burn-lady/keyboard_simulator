@@ -108,20 +108,11 @@ namespace Keyboard_semulator
 
             if (lettersRadioButton.Checked)
             {
-                lines = new List<string>();
-                lines.Add("empty");
-                LettersController.initLettersAndStatistic();
-                task = Convert.ToString(LettersController.getLetterHasMaxMiniseconds()); 
-                taskLabel.Text = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
+                LettersController.init();
+                task = LettersController.getLine();
+                //task = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
+                taskLabel.Text = task;
                 sessionType = Session.CONTROL_LETTERS_SESSION;
-                //Заглушка
-                //lines = MyTextReader.read(MyTextReader.CONTROL_LETTERS);
-                //if (lines != null)
-                //{
-                //    task = Controller.generateTask_Letters(lines);
-                //    sessionType = Session.CONTROL_LETTERS_SESSION;
-                //}
-                //else showFileNotFoundMessage();
             }
         }
 
@@ -176,7 +167,7 @@ namespace Keyboard_semulator
 
         private void lettersMode()
         {
-            if (taskLabel.Text == textBox1.Text)
+            if (taskLabel.Text[0] == textBox1.Text[0])
             {
                 hitClickLettersEvent(textBox1.Text[0]);
             }
@@ -189,8 +180,9 @@ namespace Keyboard_semulator
         private void hitClickLettersEvent(char letter)
         {
             totalClicks++;
-            task = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
-            taskLabel.Text = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
+            task = LettersController.getLine();
+            //task = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
+            taskLabel.Text = task;
             LettersController.setLetter(letter, sessionTimeBlock);
             fixBlock();
             updateInterface();
