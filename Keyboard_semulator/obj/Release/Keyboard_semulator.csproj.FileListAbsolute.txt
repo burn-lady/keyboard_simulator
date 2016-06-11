@@ -84,3 +84,4 @@ E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.
 E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Forms.UsersForm.resources
 E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.Properties.Resources.resources
 E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.csproj.GenerateResource.Cache
+E:\git-dev\keyboard_simulator\Keyboard_semulator\obj\Release\Keyboard_semulator.csprojResolveAssemblyReference.cache

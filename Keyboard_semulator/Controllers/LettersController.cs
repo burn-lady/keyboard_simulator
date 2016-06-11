@@ -16,6 +16,7 @@ namespace Keyboard_semulator.Controllers
         private static char lastLetter = 'a';
 
         private static StringBuilder line = new StringBuilder();
+        
 
         public static string getLine()
         {
@@ -55,9 +56,8 @@ namespace Keyboard_semulator.Controllers
         {
             int oldValue = statisticLetters[letter];
             int sValue = (oldValue + newValue) / 2;
-            statisticLetters[letter] = newValue;
-            
-           // File.AppendAllLines("log.txt", new string[] { letter.ToString(), sValue.ToString(), " --- "  } );
+            statisticLetters[letter] = sValue;
+            LettersLogger.writeLog(letter, sValue);
         }
 
         public static void init()

@@ -114,6 +114,8 @@ namespace Keyboard_semulator
                 //task = Convert.ToString(LettersController.getLetterHasMaxMiniseconds());
                 taskLabel.Text = task;
                 sessionType = Session.CONTROL_LETTERS_SESSION;
+                LettersLogger.setUserAndCreateLog(userName);
+                
             }
         }
 
