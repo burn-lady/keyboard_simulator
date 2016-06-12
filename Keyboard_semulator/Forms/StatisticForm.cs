@@ -134,16 +134,18 @@ namespace Keyboard_semulator.Forms
             addInfo("");
             addInfo("Статистика ошибок по буквам");
             InfoListBox.Items.AddRange(selectedSession.getArrayStringErrorLetters());
-                Dictionary<char,int> statisticLetters = LettersController.statisticLetters;
-                if (statisticLetters != null)
-                {
-                    addInfo("Статистика времени (милисекунды) по буквам");
-                    foreach (KeyValuePair<char, int> KeyValue in statisticLetters)
-                    {
-                        addInfo(KeyValue.Key + "   милисекунды: " + KeyValue.Value);
-                    }
-                }
-                 
+
+
+                //Dictionary<char, int> statisticLetters = LettersController.statisticLetters;
+                //if (statisticLetters != null)
+                //{
+                //    addInfo("Статистика времени (милисекунды) по буквам");
+                //    foreach (KeyValuePair<char, int> KeyValue in statisticLetters)
+                //    {
+                //        addInfo(KeyValue.Key + "   милисекунды: " + KeyValue.Value);
+                //    }
+                //}
+
             } catch (NullReferenceException)
             {
                 MessageBox.Show("Выбирите конкретную сессию");
