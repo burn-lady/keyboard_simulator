@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Keyboard_semulator.Controllers;
 
 namespace Keyboard_semulator.Data
 {
@@ -11,14 +12,16 @@ namespace Keyboard_semulator.Data
     {
         public string name;
         public List<Session> listSessions;
+        public Dictionary<char, int> statisticLetters;
         public int A_first;
-       
+        
 
         public User (string name) {
             this.name = name;
             listSessions = new List<Session>();
             A_first = 0;
-
+            LettersController.init();
+            statisticLetters = LettersController.statisticLetters;
         }
 
         public static User searchUser (List<User> listUsers, string name)

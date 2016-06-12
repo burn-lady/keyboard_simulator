@@ -31,9 +31,10 @@ namespace Keyboard_semulator
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
+            User user = User.searchUser(listUsers, UsersBox.Text);
             if (UsersBox.Text != "")
                 new Form1(
-                     UsersBox.Text
+                     user
                     ).ShowDialog();
             else MessageBox.Show("Необходимо выбрать пользователя!");
             loadUsers();

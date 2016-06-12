@@ -9,12 +9,13 @@ namespace Keyboard_semulator.Data
     [Serializable()]
     public class TimeBlockCliks
     {
-        public int secondStartSession; 
+    
+        public int minisecondStartSession; 
         public int countClicks;
 
         public TimeBlockCliks(int secondStartSession, int countClicks)
         {
-            this.secondStartSession = secondStartSession;
+            this.minisecondStartSession = secondStartSession;
             this.countClicks = countClicks;
         }
     }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Keyboard_semulator.Data;
+using Keyboard_semulator.Controllers;
 
 namespace Keyboard_semulator.Forms
 {
@@ -126,13 +127,25 @@ namespace Keyboard_semulator.Forms
             addInfo(dateString);
             addInfo(selectedSession.typeSession);
             addInfo("");
-            addInfo("Время сессии (сек): " + selectedSession.sessionTime);
+            addInfo("Время сессии (сек): " + Convert.ToString (selectedSession.sessionTime/ 1000) );
             addInfo("Колличество ошибок: " + selectedSession.errorClicks);
             addInfo("Всего нажатий: " + selectedSession.totalClicks);
             addInfo("Всего слов: " + selectedSession.totalWords);
             addInfo("");
             addInfo("Статистика ошибок по буквам");
-            InfoListBox.Items.AddRange(selectedSession.getArrayStringErrorLetters());   
+            InfoListBox.Items.AddRange(selectedSession.getArrayStringErrorLetters());
+
+
+                //Dictionary<char, int> statisticLetters = LettersController.statisticLetters;
+                //if (statisticLetters != null)
+                //{
+                //    addInfo("Статистика времени (милисекунды) по буквам");
+                //    foreach (KeyValuePair<char, int> KeyValue in statisticLetters)
+                //    {
+                //        addInfo(KeyValue.Key + "   милисекунды: " + KeyValue.Value);
+                //    }
+                //}
+
             } catch (NullReferenceException)
             {
                 MessageBox.Show("Выбирите конкретную сессию");

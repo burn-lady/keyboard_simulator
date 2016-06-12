@@ -11,6 +11,7 @@ namespace Keyboard_semulator
 
     class MyTextReader
     {
+        public static string LETTERS = "letters.txt";
         public static string CONTROL_WORDS = "words_text_file.txt";
         public static string CONTROL_TEXT = "control_text.txt";
         public static string CONTROL_LETTERS = "control_letters.txt";
@@ -18,12 +19,13 @@ namespace Keyboard_semulator
 
         public static List<string> read (string path)
         {
-            try {
+            try
+            {
                 List<string> listText = new List<string>();
                 listText.AddRange(File.ReadAllLines(path, Encoding.Default));
                 return listText;
-            } catch (FileNotFoundException)
-            {
+             } catch (FileNotFoundException)
+            {                
                 return null;
             }
             
